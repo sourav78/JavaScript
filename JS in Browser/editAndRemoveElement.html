@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove element on DOM</title>
+</head>
+<body>
+    <ul class="languages">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //add Elements in DOM
+    function addNewLang(lang){
+        const languages = document.createElement("li")
+        languages.appendChild(document.createTextNode(lang))
+        document.querySelector(".languages").appendChild(languages)
+    }
+    addNewLang("python")
+    addNewLang("GoLang")
+    addNewLang("Typescript")
+
+    
+    //Edit Element
+
+    const editLang = document.querySelector("li:nth-child(2)") // select python
+    const newLang = document.createElement("li")
+    newLang.appendChild(document.createTextNode("Java"))
+    editLang.replaceWith(newLang) // python replace with java
+
+    function editElement(el, lang){
+        const editLang = document.querySelector(`li:nth-child(${el})`) //select language
+        const newLang = document.createElement("li")
+        newLang.appendChild(document.createTextNode(lang))
+        editLang.replaceWith(newLang)
+    }
+    editElement(4, "Rust")
+
+
+    //Remove Element
+
+    // const removedEl = document.querySelector("li:nth-child(3)")
+    // removedEl.remove() // Golang is removed
+
+    function removeElement(el){
+        const removeEl = document.querySelector(`li:nth-child(${el})`)
+        removeEl.remove()
+    }
+    removeElement(3)
+    // removeElement(2)
+</script>
+</html>

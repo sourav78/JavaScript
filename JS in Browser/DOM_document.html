@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="head" class="heading">This is DOM manipulation <span>in js</span> </h1>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor. ghit</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>DOM stans for documant object module</p>
+        <style>
+            body{
+                background: linear-gradient(red green);
+            }
+        </style>
+    </div>
+
+    <ul>
+        <li class="li-item">One</li>
+        <li class="li-item">Two</li>
+        <li class="li-item">Three</li>
+        <li class="li-item">Four</li>
+    </ul>
+
+    <script>
+    //     document.getElementById('head')
+    //     //<h1 id=​"head" class=​"heading">​This is DOM manipulation​</h1>​
+    //     document.getElementById('head').innerHTML
+    //     //'This is DOM manipulation'
+    //     document.getElementById('head').innerText
+    //     //'This is DOM manipulation'
+    //     document.getElementById('head').id
+    //     //'head'
+    //     document.getElementById('head').className
+    //     //'heading'
+    //     document.getElementById('head').getAttribute('id')
+    //     //'head'
+    //     document.getElementById('head').getAttribute('class')
+    //     //'heading'
+    //     document.getElementById('head').setAttribute("class", "DOM")
+    //     //undefined
+    //     document.getElementById('head').className
+    //     //'DOM'
+    //     document.getElementById('head').setAttribute("class", "DOM, heading")
+    //     //undefined
+    //     document.getElementById('head').className
+    //     //'DOM' 'heading'
+
+
+
+    //     //To target syling in css
+
+    //     let title = document.getElementById('head')
+    //     //title
+    //     //<h1 id=​"head" class=​"DOM, heading">​This is DOM manipulation​</h1>​
+    //     title.style.backgroundColor = 'red'
+    //     //'red'
+    //     title.style.color = '#fff'
+    //     //'#fff'
+    //     title.style.padding = '10px'
+    //     //'10px'
+    //     title.style.borderRadius = '10px'
+    //     //'10px'
+    //     title.style.border = '4px solid blue'
+    //     //'4px solid blue'
+
+
+    //     //querySelector in js DOM
+
+    //     document.querySelector('.head')
+    //     //null
+    //     document.querySelector('#head')
+    //     //<h1 id=​"head" class=​"DOM, heading" style=​"background-color:​ red;​ color:​ rgb(255, 255, 255)​;​ padding:​ 10px;​ border-radius:​ 10px;​ border:​ 4px solid blue;​">​This is DOM manipulation​</h1>​
+    //     document.querySelector('.heading')
+    //     //<h1 id=​"head" class=​"DOM, heading" style=​"background-color:​ red;​ color:​ rgb(255, 255, 255)​;​ padding:​ 10px;​ border-radius:​ 10px;​ border:​ 4px solid blue;​">​This is DOM manipulation​</h1>​
+    //     document.querySelector('h2')
+    //     //<h2>​Lorem, ipsum dolor.​</h2>​
+    //     document.querySelectorAll("h2")
+    //     //NodeList(3) [h2, h2, h2]0: h21: h22: h2length: 3[[Prototype]]: NodeList
+    //     document.querySelectorAll("p, #head")
+    //     //NodeList(2) [h1#head.DOM,.heading, p]0: h1#head.DOM,.heading1: plength: 2[[Prototype]]: NodeList
+    //     const item = document.querySelectorAll("h2")
+    //     //undefined
+    //     item
+    //     //NodeList(3) [h2, h2, h2]
+
+    //     //NodeList
+
+    //     document.querySelector('li')
+    //     //<li>​…​</li>​
+    //     const lisiItem = document.querySelector('li')
+    //     //undefined
+    //     lisiItem
+    //     //<li>​…​</li>​::marker​"One"</li>​//
+    //     lisiItem.style.color = 'red'
+    //     //'red'
+    //     lisiItem.style.fontWeight = '600'
+    //     //'600'
+    //     document.querySelectorAll('li')
+    //     //NodeList(4) [li, li, li, li]
+    //     const allListItem = document.querySelectorAll('li')
+    //    // undefined
+    //     allListItem
+    //     //NodeList(4) [li, li, li, li]0: li1: li2: li3: lilength: 4[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()length: 1name: "forEach"arguments: [Exception: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+    //         //at Function.invokeGetter (<anonymous>:3:28)]caller: [Exception: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+    //         //at Function.invokeGetter (<anonymous>:3:28)][[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+    //     allListItem[2].style.backgroundColor = 'blue'
+    //     //'blue'
+    //     const myH1 = document.querySelectorAll('h1')
+    //    // undefined
+    //     myH1
+    //     //NodeList [h1#head.DOM,.heading]
+    //     //myH1.style.color = 'purple'
+    //     //VM531:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    //         //at <anonymous>:1:18
+    //     //(anonymous) @ VM531:1
+    //     myH1[0].style.color = 'purple'
+        //'purple'
+    </script>
+</body>
+</html>

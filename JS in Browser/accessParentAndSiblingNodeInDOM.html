@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent and sibling node in DOM</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Hyy boiiii</h2>
+        <p>I am sourav ranjan sahoo</p>
+    </div>
+    <div class="fruits">
+        <ul>
+            <li class="fruit1">Apple</li>
+            <li class="fruit2">Banana</li>
+            <li class="fruit3">Coconut</li>
+            <li class="fruit4">Dragon fruit</li>
+        </ul>
+    </div>
+
+    <script>
+
+        // Short hand
+
+        const sibling = document.querySelector(".container")
+        // console.log(sibling);
+
+        // console.log(sibling.children[0]);
+        // console.log(sibling.children[0].nextElementSibling); //next sibling
+
+        // console.log(sibling.children[1]);
+        // console.log(sibling.children[1].previousElementSibling); //previous sibling
+
+        const parr = document.querySelector(".fruit1")
+        console.log(parr); // apple
+        console.log(parr.parentElement); //ul
+        console.log(parr.parentElement.parentElement); // div.fruits
+
+
+        
+        //Access Sibling Node
+
+        //next sibling
+        // console.log(document.body.firstElementChild);
+        // console.log(document.body.firstElementChild.nextElementSibling);
+
+        // console.log(document.body.firstElementChild.firstElementChild);
+        // console.log(document.body.firstElementChild.firstElementChild.nextElementSibling);
+
+        //previous sibling
+        // console.log(document.body.lastElementChild);
+        // console.log(document.body.lastElementChild.previousElementSibling);
+        // console.log(document.body.lastElementChild.previousElementSibling.previousElementSibling);
+
+
+
+        //Access Parent sibling
+        // console.log(document.body.firstElementChild);
+        // console.log(document.body.firstElementChild.parentNode);
+
+        // console.log(document.body.firstElementChild.firstElementChild);
+        // console.log(document.body.firstElementChild.firstElementChild.parentNode);
+
+        // console.log(document.body.childNodes);
+        // console.log(document.body.childNodes[3]);
+        // console.log(document.body.childNodes[3].childNodes[1]);
+        // console.log(document.body.childNodes[3].childNodes[1].childNodes[1]);
+        // console.log(document.body.childNodes[3].childNodes[1].childNodes[1].innerText);
+    </script>
+</body>
+</html>

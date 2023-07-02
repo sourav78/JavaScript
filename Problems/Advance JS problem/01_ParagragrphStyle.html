@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify paragrapg <style></style></title>
+</head>
+<body>
+    <p id ='text'>JavaScript Exercises - w3resource</p> 
+    <div>
+        <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+
+    <script>
+        const para = document.querySelector("#text")
+        function js_style(){
+            para.style.fontSize = '22px'
+            para.style.fontFamily = 'Courier New'
+        }
+    </script>
+</body>
+</html>

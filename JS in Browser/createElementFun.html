@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a element in a button click</title>
+    <style>
+        .container{
+            padding: 20px;
+            margin-block: 30PX;
+            background-color: #2298ff;
+            border: 3px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn-cont{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .btn{
+            cursor: pointer;
+            padding-block: 10px;
+            padding-inline: 10px;
+            background-color: #9201e6;
+            color: aliceblue;
+            font-size: 20px;
+            border-style: none;
+            border-radius: 10px;
+            width: 230px;
+            display: block;
+            /* margin: 5px auto; */
+        }
+
+        #remove{
+            border: 2px solid red;
+            background-color: #fff;
+            color: #ff0707;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <div class="btn-cont">
+        <button class="btn" id="create">Create a new element</button>
+        <button class="btn" id="remove">Remove element</button>
+    </div>
+</body>
+
+<script>
+    const create = document.getElementById("create")
+    const remove = document.getElementById("remove")
+    const mainParent = document.querySelector(".container")
+    console.log(mainParent);
+
+    const colors = ["red", "green", "blue", "cyan", "chartreuse", "chocolate", "darkorange", "deeppink", "mediumslateblue", "violet", "sandybrown", "lawngreen", "#3100a2", "#cf5fff", "#0076e5"]
+    let count = 0
+    function createNewElement(){
+        const div = document.createElement("div")
+        div.style.width = "50px"
+        div.style.height = "50px"
+        div.style.backgroundColor = colors[count]
+
+        mainParent.appendChild(div)
+        if(count === colors.length-1){
+            count = 0
+        }else{
+            count += 1
+        }
+    }
+
+    function removeElement(){
+        const allElements = mainParent.lastElementChild
+        if(allElements === null){
+            count = 0
+        }else{
+            allElements.remove()
+        }
+    }
+
+    create.addEventListener("click", createNewElement)
+    remove.addEventListener("click", removeElement)
+</script>
+
+</html>

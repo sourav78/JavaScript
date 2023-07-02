@@ -1,0 +1,24 @@
+<!-- You are given some names of different fruit and an unordered list html element; add a list item for each to the unordered list. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make unordered list</title>
+</head>
+<body>
+    <ul class="fruits"></ul>
+</body>
+<script>
+    const parentEle = document.querySelector(".fruits")
+
+    const fruitList = ["apple", "banana", "tomato", "orange"]
+
+    fruitList.forEach( (fruit) => {
+        const list = document.createElement("li")
+        list.innerHTML = fruit
+        parentEle.appendChild(list)
+    })
+</script>
+</html>

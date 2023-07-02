@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get color from color input</title>
+
+    <style>
+        .container{
+            width: 20%;
+            height: 15%;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+
+        #color{
+            width: 70px;
+            height: 40px;
+            outline: none;
+            border: 2px solid black;
+            margin: auto;
+        }
+        #change{
+            width: 150px;
+            height: 30px;
+            margin: 20px auto;
+            /* background-color: #fa3939; */
+            border-radius: 5px;
+            font-size: 18px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+        #change:hover{
+            /* transition: 1s; */
+            color: #f3f3f3;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="color" id="color" value="#fa3939">
+        <button id="change">Change Color</button>
+    </div>
+
+    <script>
+        const color = document.getElementById('color').value
+        const colorBtn = document.getElementById('change')
+
+        window.addEventListener("load", changeColor)
+
+        function changeColor(){
+            const color = document.getElementById('color').value
+            console.log(color);
+            document.body.style.backgroundColor = color
+            colorBtn.style.backgroundColor = color
+        }
+
+        colorBtn.addEventListener("click", changeColor)
+
+        
+        // console.log(color);
+    </script>
+</body>
+</html>

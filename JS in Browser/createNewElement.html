@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new element in DOM</title>
+</head>
+<body>
+    <script>
+        //create a new element
+
+        const div = document.createElement("div")
+        console.log(div);
+        div.className = "createDiv" // set class name
+        div.id = "new-div" // set ID name
+        div.setAttribute("value", "flexDiv") // set attribute
+        document.body.appendChild(div)
+        
+        //add element in div
+        // const text = document.createTextNode("This is created div")
+        // div.appendChild(text)
+        div.style.backgroundColor = "blue"
+        div.style.padding = "20px"
+        div.style.color = "#fff"
+        div.style.fontWeight = "bold"
+        div.style.fontSize = "20px"
+
+        //create a new element add in div
+
+        const box1 = document.createElement("div")
+        box1.className = "child"
+        box1.style.width = "50px"
+        box1.style.height = "50px"
+        box1.style.backgroundColor = "red"
+        box1.style.margin = "10px"
+        box1.style.padding = "10px"
+        const text1 = document.createTextNode("box 1")
+        box1.appendChild(text1)
+
+        const box2 = document.createElement("div")
+        box2.className = "child"
+        document.body.appendChild(box2)
+        box2.style.width = "50px"
+        box2.style.height = "50px"
+        box2.style.backgroundColor = "green"
+        box2.style.margin = "10px"
+        box2.style.padding = "10px"
+        const text2 = document.createTextNode("box 2")
+        box2.appendChild(text2)
+
+        const parren = document.querySelector(".createDiv")
+        parren.appendChild(box1)
+        parren.appendChild(box2)
+
+
+        //Extra
+        parren.style.display = "flex"
+        parren.style.justifyContent = "center"
+    </script>
+</body>
+</html>

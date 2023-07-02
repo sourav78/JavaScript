@@ -1,0 +1,40 @@
+<!-- Write a JavaScript program to highlight the bold words of the following paragraph, on mouse over a certain link. -->
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Get And Style All Tags</title>
+    <style>
+        body{
+            font-size: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>[<a href="#" onMouseOver="highlight()" onMouseOut="return_normal()">On mouse over here bold words of the
+            following paragraph will be highlighted</a>]</p>
+    <p><strong>We</strong> have just started <strong>this</strong> section for the users (<strong>beginner</strong> to
+        intermediate) who <strong>want</strong> to work with <strong>various</strong> JavaScript
+        <strong>problems</strong> and write scripts online to <strong>test</strong> their JavaScript
+        <strong>skill</strong>.</p>
+</body>
+<script>
+    const highli = document.querySelectorAll("strong")
+    window.onload = return_normal()
+    function highlight(){
+        highli.forEach( (ele) => {
+            ele.style.color = "#0dff78"
+        })
+    }
+    function return_normal(){
+        highli.forEach( (ele) => {
+            ele.style.color = "black"
+        })
+    }
+</script>
+</html>

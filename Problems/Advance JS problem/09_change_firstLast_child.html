@@ -1,0 +1,35 @@
+<!-- Change the text in the first and the last list item element in every unordered list element on this page. Change it to 'first' and 'last'. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change first and last child</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+      <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+      </ul>
+      <ul>
+        <li>👻</li>
+        <li>👽</li>
+        <li>🦁</li>
+      </ul>
+</body>
+<script>
+    const allEls = document.querySelectorAll("ul")
+
+    allEls.forEach( (ele) => {
+        ele.firstElementChild.innerHTML = "first"
+        ele.lastElementChild.innerHTML = "last"
+    })
+</script>
+</html>

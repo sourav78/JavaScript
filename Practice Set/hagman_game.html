@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HangMan GAme</title>
+
+    <style>
+        .game-console{
+            position: relative;
+            top: 100px;
+            width: 30%;
+            height: 300px;
+            margin: auto;
+            border: 2px solid black;
+        }
+        .bottom-stand{
+            background-color: #ff0000;
+            width: 200px;
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            display: none;
+        }
+        .bottom-stand2{
+            background-color: #ff0000;
+            width: 5px;
+            height: 200px;
+            position: absolute;
+            top: 25%;
+            left: 48%;
+            display: none;
+        }
+
+        .bottom-stand3{
+            background-color: #ff0000;
+            width: 100px;
+            height: 5px;
+            position: absolute;
+            top: 25%;
+            left: 42%;
+            display: none;
+        }
+        .bottom-stand4{
+            background-color: #ff0000;
+            width: 5px;
+            height: 30px;
+            position: absolute;
+            top: 25%;
+            left: 42%;
+            display: none;
+        }
+        .head{
+            /* background-color: #ff0000; */
+            border: 2px solid red;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 28%;
+            left: 41%;
+            display: none;
+        }
+        .body{
+            background-color: #ff0000;
+            width: 3px;
+            height: 70px;
+            position: absolute;
+            top: 32%;
+            left: 42%;
+            display: none;
+        }
+        .handl{
+            background-color: #ff0000;
+            width: 30px;
+            height: 3px;
+            position: absolute;
+            top: 34%;
+            left: 40.5%;
+            transform: rotate(-30deg);
+            display: none;
+        }
+        .handr{
+            background-color: #ff0000;
+            width: 30px;
+            height: 3px;
+            position: absolute;
+            top: 34%;
+            left: 42%;
+            transform: rotate(30deg);
+            display: none;
+        }
+        .legr{
+            background-color: #ff0000;
+            width: 30px;
+            height: 3px;
+            position: absolute;
+            top: 42%;
+            left: 41.8%;
+            transform: rotate(50deg);
+            display: none;
+        }
+        .legl{
+            background-color: #ff0000;
+            width: 30px;
+            height: 3px;
+            position: absolute;
+            top: 42%;
+            left: 40.5%;
+            transform: rotate(-50deg);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-console">
+        <div class="legr"></div>
+        <div class="legl"></div>
+        <div class="handr"></div>
+        <div class="handl"></div>
+        <div class="body"></div>
+        <div class="head"></div>
+        <div class="bottom-stand4"></div>
+        <div class="bottom-stand3"></div>
+        <div class="bottom-stand2"></div>
+        <div class="bottom-stand"></div>
+    </div>
+
+    <button id="worng">Worng</button>
+</body>
+<script>
+    const worng = document.getElementById("worng")
+    let count = 9
+    function displayStick(){
+        const gameCOmp = document.querySelector(".game-console")
+        gameCOmp.children[count].style.display = "block"
+        // console.log(gameCOmp.children[0]);
+        count -=1
+    }
+
+    worng.addEventListener("click", displayStick)
+</script>
+</html>

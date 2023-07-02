@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p style="font-size: 18px;" class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. deleniti atque ipsum deserunt delectus, enim explicabo non similique itaque laborum. Voluptas officiis maxime delectus, atque quod earum culpa aliquam alias illum voluptate at quo, iste porro unde possimus ex pariatur iure deleniti tempore rerum omnis eaque blanditiis ab ducimus. Velit sit natus facere voluptas eveniet voluptatibus, veritatis optio saepe alias. Ut consequatur, commodi doloribus ipsum debitis cupiditate unde neque mollitia sapiente expedita perspiciatis dolorem porro quisquam possimus provident deserunt laudantium quas ex id voluptate quibusdam pariatur accusantium molestiae. Nostrum aspernatur repellat, cum expedita sunt neque? Impedit suscipit porro odit adipisci doloremque. Consequuntur modi velit minus molestias quae illo minima fugiat in quaerat nisi quis nemo eius, recusandae fugit. Eveniet eligendi tempore reiciendis optio odio aperiam labore quae facilis corrupti. Maxime laudantium illo deleniti consectetur, reprehenderit ab atque ea fuga soluta molestiae obcaecati. Reiciendis repudiandae adipisci necessitatibus nulla. Corporis necessitatibus esse iusto? Molestiae odit quo nostrum excepturi sed repellat nihil ea libero reprehenderit fuga adipisci fugit, dolorum earum, blanditiis exercitationem facere. Nobis nesciunt quo nisi animi, fugiat nam reprehenderit quisquam consequuntur enim delectus culpa ipsam asperiores? Maxime reprehenderit consequatur eligendi amet, a et voluptatibus excepturi atque perferendis enim velit eaque accusantium dolorem pariatur vel sequi ut quasi itaque quidem numquam architecto voluptate nobis quibusdam hic. Saepe nulla necessitatibus vitae, architecto dolorum porro dicta nesciunt sit, laudantium vel quis. Beatae, aspernatur. Quae illo id laboriosam vel similique culpa sint voluptate quibusdam facere, odit voluptatem ipsam molestias itaque hic fugit, quasi aut, saepe deserunt doloribus totam aspernatur inventore laudantium vero! Tempore laborum enim culpa veniam cum praesentium nihil ad, accusamus quisquam impedit beatae atque corporis incidunt recusandae voluptatibus deleniti et nam architecto! Id consequatur veritatis voluptas dolore exercitationem facere nostrum ratione animi illo quaerat quam nam consequuntur officiis fugit saepe voluptatum dolorem amet, tenetur obcaecati repellat blanditiis nesciunt! Aliquam voluptatibus corporis mollitia atque placeat aperiam consequatur? Quas exercitationem debitis asperiores maiores quaerat doloribus veniam, vero a odit aspernatur quod sit suscipit nostrum animi, repudiandae voluptas natus totam? Consequuntur repellendus explicabo tempore in culpa, possimus ab impedit reprehenderit. Eligendi, illo fugiat! Odio quam dignissimos eos itaque explicabo voluptas eum hic asperiores corporis, earum sed, fugit eius optio eaque? Aliquam ipsam consequuntur vitae dignissimos, ipsum error nemo doloribus, adipisci dolores assumenda neque cumque quis commodi numquam aliquid eligendi magnam tempora cupiditate ut corporis ex? Corrupti quod quae natus aliquid, atque minus iure perferendis nemo obcaecati quis! Quidem reiciendis quod reprehenderit ipsum possimus aliquid quaerat atque rerum perspiciatis numquam ratione, unde perferendis ipsa vel iste quam distinctio velit. Iusto mollitia ipsam pariatur, reiciendis placeat eos iure vel officiis commodi, libero consequatur, corrupti at quod. Id in eaque cupiditate fugit aut aliquid molestiae consequatur dolorum asperiores ab impedit amet iste, praesentium maiores ipsum debitis earum odit commodi totam obcaecati accusamus rerum nam beatae aliquam. Necessitatibus atque facere vel neque deserunt doloribus assumenda dolorum obcaecati aspernatur in, ex delectus quidem accusantium quam sunt suscipit voluptatem veniam, aliquam non, quia voluptate? Reiciendis, deleniti et.</p>
+</body>
+<!-- 1. highlight the word which is grreater than 8 words -->
+<!-- <script>
+    const para = document.querySelector("p")
+    // console.log(para.innerText)
+    // console.log(para.innerText.split(' '));
+    para.innerHTML = para.innerText.split(' ').map((ele) => {
+        return ele.length > 8 ? `<span style="background-color: yellow">${ele}</span>` : ele
+    }).join(" ")
+</script> -->
+
+<!-- // 2. Count the number of words in the paragraph tag and display the count afer the heading. -->
+<script>
+    const para1 = document.querySelector("p")
+    // console.log(para1.innerText.split(" ").length);
+    const p = document.createElement("p")
+    p.innerHTML = `${para1.innerText.split(" ").length} words`
+    document.body.insertBefore(p, para1)
+</script>
+
+<!-- // 3. Replace all question marks (?) with thinking faces (🤔) and exclamation marks (!) with astonished faces (😲) -->
+<script>
+    const para2 = document.querySelector(".para")
+    para2.innerHTML = para2.innerHTML.replace(/\?/g, "🤔").replace(/\!/g, "😲").replace(/\./g, "😊")
+</script>
+</html>

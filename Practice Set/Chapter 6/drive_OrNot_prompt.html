@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drive or not in prompt</title>
+</head>
+<body>
+    
+
+    <script>
+        const check = (d) =>{
+            return d<18 ? true:false
+        }
+        let d = prompt("Enter Your age :")
+        d = Number.parseInt(d);
+
+        if(check(d)){
+            alert("You can't drive")
+        }else{
+            alert("You can drive")
+        }
+
+    </script>
+</body>
+</html>

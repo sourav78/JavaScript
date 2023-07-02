@@ -1,0 +1,30 @@
+<!-- Add the CroCoder logo (image element) as a child element to the existing div element. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add image in a div</title>
+    <style>
+
+        .logo-cont{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #e9d70b;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-cont"></div>
+</body>
+<script>
+
+
+    const imgtag = document.createElement("img")
+    imgtag.src = "https://www.crocoder.dev/icon.png"
+    imgtag.style.width = "150px"
+    imgtag.style.marginLeft = "20px"
+    document.querySelector(".logo-cont").appendChild(imgtag)   
+</script>
+</html>

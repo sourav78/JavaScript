@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #383838;
+        }
+        .container{
+            padding: 10px;
+            background-color: black;
+            width: 37%;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 0 10px 0 #00000080;
+            border-radius: 10px;
+            align-items: center;
+    }
+    .container h2{
+        margin: 0;
+        color: aliceblue;
+    }
+    .time{
+        min-width: 150px;
+        background-color: orange;
+        border-radius: 10px;
+        text-align: center;
+        color: aliceblue;
+        padding-block: 15px;
+        font-size: 20px;
+        font-family: monospace;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Time</h2>
+        <div class="time" id="time"></div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>

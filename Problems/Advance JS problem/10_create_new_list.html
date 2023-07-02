@@ -1,0 +1,40 @@
+<!-- You are building a web page that displays a list of items. The user should be able to add new items to the list and edit the text of the items. Your task is to use the DOM API to create the necessary elements, add event listeners to them, and manipulate the elements as the user interacts with the page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craete new listeners</title>
+    <style>
+        ul{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="list-app">
+        
+    <div>
+</body>
+<script>
+    const parentEl = document.getElementById("list-app")
+
+    const unList = document.createElement("ul")
+    const input = document.createElement("input")
+    input.placeholder = "Enter new list"
+    const createBtn = document.createElement("button")
+    createBtn.innerText = "Create New Element"
+    parentEl.appendChild(unList)
+    parentEl.appendChild(input)
+    parentEl.appendChild(createBtn)
+
+    createBtn.addEventListener("click", () => {
+        const list = document.createElement("li")
+        list.innerHTML = input.value
+        unList.appendChild(list)
+        input.value = ''
+    })
+
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children Node in html</title>
+</head>
+<body>
+    <div>
+        <h1>helloo</h1>
+        <p>world</p>
+    </div>
+    <span>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+        </ul>
+    </span>
+
+    <div class="Week">
+        <div class="mon">Monday</div>
+        <div class="tue">Tusedau</div>
+        <div class="wed">Wednesday</div>
+        <div class="thu">ThurseDay</div>
+    </div>
+</body>
+<script>
+
+    const days = document.querySelector(".Week")
+    // console.log(days);
+    // console.log(days.children);
+    // console.log(days.children[2]);
+    // console.log(days.children[2].innerHTML);
+    // // const weekDays = days.children
+    // // console.log(weekDays[0]);
+
+    // for(let i = 0; i<days.children.length; i++){
+    //     console.log(days.children[i].innerHTML);
+    //     // console.log(weekDays[i].innerHTML);
+    // }
+
+    // const alldays = days.children
+    // console.log(alldays);
+    // alldays[2].style.color = "green"
+    // alldays[3].style.color = "blue"
+
+
+    //--------------------------------------------------------------------------
+
+    // const allEle = document.body.children
+    // console.log(allEle);
+    // console.log(allEle[1].firstElementChild.children) // HTMLCollection(4) [li, li, li, li]
+
+    // const liList= allEle[1].firstElementChild.children[1]
+    // console.log(liList.innerHTML); // two
+    // liList.style.color = "red"
+    
+    // const onorderd = allEle[1].firstElementChild.childElementCount
+    // console.log(onorderd);  // 4
+
+
+
+    // ----------**************------------
+
+
+    // console.log(document.body.firstChild);
+    // console.log(document.body.lastChild);
+    // console.log(document.body.childNodes);
+    // console.log(document.body.firstElementChild);
+    // console.log(document.body.firstElementChild.childElementCount);
+    // console.log(document.body.firstElementChild.children);
+    // console.log(document.body.firstElementChild.hasChildNodes());
+    // console.log(document.body.firstElementChild.lastElementChild);
+
+
+    // ----------**************------------
+
+    //Node type
+
+    // console.log(document.body.firstChild.nodeType == Node.TEXT_NODE);
+    // console.log(document.body.firstElementChild.nodeType == Node.TEXT_NODE);
+    // console.log(document.body.firstElementChild.nodeType == Node.ELEMENT_NODE);
+    // console.log(document.body.firstElementChild.nodeType);
+    // console.log(Node.ELEMENT_NODE);
+    // console.log(document.body.firstElementChild);
+</script>
+</html>

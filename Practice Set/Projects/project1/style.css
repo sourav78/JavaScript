@@ -1,0 +1,31 @@
+body{
+    font-family: monospace;
+}
+h1{
+    text-align: center;
+}
+.container{
+    margin: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.button{
+    display: block;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+}
+#grey{
+    background-color: gray;
+}
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+}
+#pink{
+    background-color: pink;
+}
