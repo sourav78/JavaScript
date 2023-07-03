@@ -112,3 +112,11 @@
 
 //25.Write a method that returns new object without provided properties 
 //({ a: 1, b: 2 }, 'b') => { a: 1 } 
+
+//26.Write a function to count the occurrences of a substring in a string
+
+//27.House Robber  leetcode --> https://leetcode.com/problems/house-robber/
+// Input: nums = [2,7,9,3,1]
+// Output: 12
+// Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+// Total amount you can rob = 2 + 9 + 1 = 12.
