@@ -120,3 +120,9 @@
 // Output: 12
 // Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
 // Total amount you can rob = 2 + 9 + 1 = 12.
+
+//28.Write a JavaScript function to check whether an input is a string or not.
+
+//29.Write a JavaScript function to reverse a string.
+
+//30.Write a JavaScript function to reverse a string by word.
