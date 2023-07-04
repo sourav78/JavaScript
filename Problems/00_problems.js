@@ -126,3 +126,26 @@
 //29.Write a JavaScript function to reverse a string.
 
 //30.Write a JavaScript function to reverse a string by word.
+
+//31.Angle Between Hands of a Clock
+
+//32.The kth Factor of n
+// Input: n = 12, k = 3
+// Output: 3
+// Explanation: Factors list is [1, 2, 3, 4, 6, 12], the 3rd factor is 3.
+
+//33.Write a JavaScript function to find the longest word within a string.
+
+//34.Write a JavaScript function to check if a string contains a certain word.
+
+//35.Write a JavaScript function to check whether an input is an array or not.
+
+//36.Write a JavaScript function to get the first 'n' elements of an array.
+
+//37.Write a JavaScript function to find the most frequent item of an array.
+
+//38.Write a JavaScript function to remove a specific element from an array.
+
+//39.Write a JavaScript function to find duplicates in an array.
+
+//40.Write a function to flatten an array. For example, [1, 2, [3, 4, [5, 6]]] should become [1, 2, 3, 4, 5, 6].
