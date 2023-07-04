@@ -9,7 +9,7 @@ const startOver = document.querySelector(".resultParas")
 
 const p = document.createElement('p')
 
-let guesses = []
+let guesses = [] 
 let numGuess = 1
 
 let playGame = true
