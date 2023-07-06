@@ -149,3 +149,7 @@
 //39.Write a JavaScript function to find duplicates in an array.
 
 //40.Write a function to flatten an array. For example, [1, 2, [3, 4, [5, 6]]] should become [1, 2, 3, 4, 5, 6].
+
+//41.Write a function that will return an array of all prime numbers in a given range
+
+//42.Write a function To find Armstrong Number between two given number.
