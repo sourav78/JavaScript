@@ -19,6 +19,5 @@ console.log(hasEven(numbers));
 function isEven(arr){
     return arr.some( (ele) => ele % 2 === 0)
 }
-
-console.log(isEven(numbers));
+console.log(isEven(numbers)); // false
 console.log(isEven(evenArr));

@@ -1,7 +1,7 @@
 //remone duplicate value from array
 
 
-const arr = [1, 2, 4, 6, 4, 6]
+const arr = [1, 2, 4, 6, 4] 
 
 //1st approach
 
