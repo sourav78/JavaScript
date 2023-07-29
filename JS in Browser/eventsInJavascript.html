@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in js</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: rgb(0, 128, 241);" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //onclick - 1
+    // document.getElementById("river").onclick = () => {
+    //     alert("River is running")
+    //     document.getElementById("river").style.transform = "translateX(10px)"
+    // }
+
+    //addEventLitener
+
+    //attachEvent
+    //jQuery - on
+
+    //event types, timeStamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftey, keyCode
+
+    const ele = document.getElementById("owl")
+
+    ele.addEventListener("click", () => {
+        // alert("Owl is staring")
+        ele.style.transform = "scaleX(2)"
+    })
+
+    // Event Bubbling :- event propagation => bottom -> top
+
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("Clicked on image elements");
+    // }, false)
+
+    // document.getElementById("prayer").addEventListener("click", (e) => {
+    //     console.log("Girl is praying");
+    // }, false)
+
+    // Output:- Girl is praying
+    //          Clicked on image elements
+
+
+    
+    // Event Capturing :- event propagation => top -> bottom
+    
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("Clicked on image elements");
+    // }, true)
+
+    // document.getElementById("prayer").addEventListener("click", (e) => {
+    //     console.log("Girl is praying");
+    // }, true)
+
+    //Output:- Clicked on image elements
+    //         Girl is praying
+
+
+    //Prevents from Bubbling
+
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("Clicked on image elements");
+    // }, false)
+
+    // document.getElementById("prayer").addEventListener("click", (e) => {
+    //     console.log("Girl is praying");
+    //     e.stopPropagation()
+    // }, false)
+
+    // Output:- Girl is praying
+
+
+    //default prevention
+
+    // document.getElementById("google").addEventListener("click", (e) => {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("CLicked on google");
+    // })
+
+
+    /* Q :- When we clic on the element the element was removed */
+    
+    //Aproach - 1
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if(e.target.tagName == "IMG") e.target.parentNode.remove()
+    })
+
+    // Approach - 2
+
+    // document.querySelector("#images").addEventListener("click", (e) => {
+    //     e.preventDefault()
+    //     console.log(e.target.parentNode);
+    //     if(e.target.tagName == "IMG"){
+    //         let removeEle = e.target.parentNode
+    //         removeEle.parentNode.removeChild(removeEle)
+    //     }
+    // })
+</script>
+</html>

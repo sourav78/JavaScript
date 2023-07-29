@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event target prperties</title>
+    <style>
+        .container{
+            padding: 20px;
+            background-color: #f9bb11;
+        }
+
+        #sub-cont{
+            display: block;
+            padding: 20px;
+            background-color: #b800eb;
+        }
+
+        button{
+            padding: 16px 20px;
+            background-color: #199bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="sub-cont">
+            <button class="btncls" id="btnid">Click Me</button>
+        </span>
+    </div>
+</body>
+
+<script>
+    const btn = document.querySelector(".btncls")
+
+    btn.addEventListener("click", (e) => {
+        console.log(e);  //PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+
+        // console.log(e.target);  // <button class="btncls" id="btnid">Click Me</button>
+
+        // console.log(e.target.id);  // btnid
+
+        // console.log(e.target.className);  // btncls
+
+        // console.log(e.target.tagName);  // BUTTON
+
+
+        // This property gives the cordinate of the mouse pointer on the page
+        // console.log(e.clientX);  // ex:- X = 80
+        // console.log(e.clientY);  // ex:- Y = 90
+
+        // console.log(e.timeStamp);  // this property gives the time stamp of the object
+
+        // console.log(e.type);  // click --> this property hold the type of event like click, mouseover etc.
+
+        // console.log(e.srcElement); //  <button class="btncls" id="btnid">Click Me</button>
+
+        e.stopPropagation()
+    })
+
+    document.querySelector(".container").addEventListener("click", (e)=>{
+        console.log("Div is clicked");
+        console.log(e.clientX);
+        console.log(e.clientY);
+    })
+</script>
+
+</html>

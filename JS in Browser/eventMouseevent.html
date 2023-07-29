@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouser Events</title>
+    <style>
+        .container{
+            padding: 20px 50px;
+            background-color: #f825e6;
+        }
+
+        .sub-cont{
+            margin-top: 20px;
+        }
+
+        .event{
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 20px;
+            color: rgb(255, 255, 255);
+        }
+
+        .btn{
+            min-width: 150px;
+            height: 40px;
+            padding-inline: 10px;
+            font-size: 24px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00c800;
+            box-shadow: 5px 5px 0px #000;
+            transition: all ease 0.1s;
+        }
+        .btn:active{
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(3, 3, 42);">
+    <div class="container">
+        <div class="sub-cont">
+            <button class="btn" id="click-btn">click</button>
+            <span class="event" id="click-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="context-btn">Right click</button>
+            <span class="event" id="context-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="dblclick-btn">Double click</button>
+            <span class="event" id="dblclick-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="mousedown-btn">mousedown and up</button>
+            <span class="event" id="mousedown-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="mouseenter-btn">mouseenter</button>
+            <span class="event" id="mouseenter-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="mouseleave-btn">mouseleave</button>
+            <span class="event" id="mouseleave-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="mouseover-and-out-btn">mouseover and out</button>
+            <span class="event" id="mouseover-and-out-event"></span>
+        </div>
+        <div class="sub-cont">
+            <button class="btn" id="mousemove-btn">mousemove</button>
+            <span class="event" id="mousemove-event"></span>
+        </div>
+    </div>
+</body>
+
+<script>
+    
+</script>
+
+<script>
+    //Mouse Events
+
+    //onclick(click) => The event occur when user click on an element
+    document.getElementById("click-btn").addEventListener("click", (e) => {
+        document.getElementById("click-event").innerText = "Button clicked"
+    })
+
+    //oncontextmenu(contextmenu) => The event occur when the user right click on an element
+    document.getElementById("context-btn").addEventListener("contextmenu", (e) => {
+        document.getElementById("context-event").innerText = "Right button clicked"
+    })
+
+    //ondblclick(dblclick) => The event occur when the user double click on an element
+    document.getElementById("dblclick-btn").addEventListener("dblclick", (e) => {
+        document.getElementById("dblclick-event").innerText = "Double Clicked event"
+    })
+
+    //ondmousedown(mousedown) => The event occur when the user hold on an element
+    document.getElementById("mousedown-btn").addEventListener("mousedown", (e) => {
+        document.getElementById("mousedown-event").innerText = "mouse hold"
+        document.getElementById("mousedown-btn").style.backgroundColor = "red"
+    })
+
+    //ondmouseup(mouseup) => The event occur when the user released an element
+    document.getElementById("mousedown-btn").addEventListener("mouseup", (e) => {
+        document.getElementById("mousedown-event").innerText = "mouse released"
+        document.getElementById("mousedown-btn").style.backgroundColor = "#00c800"
+    })
+
+    //ondmouseenter(mouseenter) => The event occur when the pointer move onto an element
+    document.getElementById("mouseenter-btn").addEventListener("mouseenter", (e) => {
+        document.getElementById("mouseenter-event").innerText = "mouse pointer enter"
+    })
+
+    //ondmouseleave(mouseleave) => The event occur when the pointer moves out of an an element
+    document.getElementById("mouseleave-btn").addEventListener("mouseleave", (e) => {
+        document.getElementById("mouseleave-event").innerText = "mouse pointer leave"
+    })
+
+    //ondmouseover(mouseover) => The event occur when the pointer moved onto an element or one of its children
+    document.getElementById("mouseover-and-out-btn").addEventListener("mouseover", (e) => {
+        document.getElementById("mouseover-and-out-event").innerText = "mouse pointer over the element"
+    })
+
+    //ondmouseout(mouseout) => The event occur when the pointer moves out of an an element or one of its children
+    document.getElementById("mouseover-and-out-btn").addEventListener("mouseleave", (e) => {
+        document.getElementById("mouseover-and-out-event").innerText = "mouse pointer out from the element"
+    })
+
+    //onmousemove(mousemove) => The event occur when the pointer is moving while it is over an element
+    let counter = 1
+    document.getElementById("mousemove-btn").addEventListener("mousemove", (e) => {
+        document.getElementById("mousemove-event").innerText = `mouse move over the element ${counter} times`
+        counter++
+    })
+</script>
+
+</html>

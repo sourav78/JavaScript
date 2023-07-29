@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard events in javascript</title>
+    <style>
+        input{
+            padding: 8px;
+            min-width: 300px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .clr{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border: 2px solid black;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keyboard Events</h1>
+    <div class="form">
+        <h2>onkeydown(keydown)</h2>
+        <input type="text" placeholder="Enter keys" id="down">
+        <div class="clr down"></div>
+        <h2>onkeyup(keyup)</h2>
+        <input type="text" placeholder="Enter keys" id="up">
+        <div class="clr up"></div>
+        <h2>onkeypress(keypress)</h2>
+        <input type="text" placeholder="Enter keys" id="press">
+        <div class="clr press"></div>
+    </div>  
+
+    <input type="color" name="" id="">
+</body>
+
+<script>
+
+    // onkeydown(keydown) => This event is occur when user pressing the key down
+    document.getElementById("down").addEventListener("keydown", (e) => {
+        // alert(document.getElementById("down").value)
+        document.querySelector(".down").style.backgroundColor = document.getElementById("down").value
+    })
+
+    // onkeyup(keyup) => This event is occur when user release the key
+    document.getElementById("up").addEventListener("keyup", (e) => {
+        // alert(document.getElementById("up").value)
+        document.querySelector(".up").style.backgroundColor = document.getElementById("up").value
+    })
+
+    // onkeypress => This event is occur when the user start pressing a key
+    document.getElementById("press").addEventListener("keypress", (e) => {
+        // alert(document.getElementById("press").value)
+        document.querySelector(".press").style.backgroundColor = document.getElementById("press").value
+    })
+</script>
+
+</html>
