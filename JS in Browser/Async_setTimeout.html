@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout</title>
+</head>
+<body>
+    <h2>Nothing to say</h2>
+    <button>stop timeout</button>
+</body>
+<script>
+
+    //setTimeout
+
+    //method - 1
+
+    setTimeout(function (){
+        console.log("I am julu");
+    }, 2000)  // the function will execute after 2000 milisecond(2 sec)
+
+
+    //methos - 2 --> Function as reference
+
+    const gretting = () => {
+        console.log("Heloo sourav");
+    }
+    setTimeout(gretting, 3000)
+
+    //Ex:- 1
+    // const changeText = () => {
+    //     document.querySelector("h2").innerText = "I have something to say"
+    // }
+    // setTimeout(changeText, 3000) 
+
+
+
+    //clearTimeout
+
+    //This method always need a setTimeout reference
+
+    const changeText = () => {
+        document.querySelector("h2").innerText = "I have something to say"
+    }
+    const changeTextRef = setTimeout(changeText, 3000) 
+
+    document.querySelector("button").addEventListener("click", ()=> {
+        clearTimeout(changeTextRef)
+        console.log("Text Changing Stopped");
+    })
+</script>
+</html>

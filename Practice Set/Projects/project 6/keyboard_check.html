@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard check</title>
+    <style>
+        body{
+            text-align: center;
+            display: grid;
+            place-content: center;
+            height: 100vh;
+            color: aliceblue;
+            background-color: #060325;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        table{
+            margin-top: 10px;
+            border: 1px solid #fff;
+            border-collapse: collapse;
+        }
+
+        th{
+            padding: 5px 10px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>Press key to check key</div>
+    <div class="result"></div>
+</body>
+<script>
+    let result = document.querySelector(".result")
+
+    window.addEventListener("keydown", (e)=>{
+        result.innerHTML = `
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Key Code</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <th>${e.key === " " ? "space" : e.key}</th>
+                <th>${e.keyCode}</th>
+                <th>${e.code}</th>
+            </tr>
+        </table>
+        `
+    })
+</script>
+</html>

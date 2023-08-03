@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+
+    <style>
+        #country{
+            padding: 10px;
+            font-size: 20px;
+            /* -webkit-appearance: none; */
+            -moz-appearance: none;
+        }
+        #country::-ms-expand{
+            display: none;
+        }
+        select option{
+            padding: 20px;
+            font-size: 20px;
+            /* border: 2px solid red; */
+            background-color: #f63030;
+            line-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="country">
+        <option class="country-opt" value="">Option</option>
+    </select>
+</body>
+
+<script>
+    // let appi = `https://restcountries.com/v3.1/name/Germany?fullText=true`
+    
+    
+    // fetch(appi).then((response) => response.json())
+    // .then((data) => {
+    //     console.log(data);
+    //     // console.log(data[0].capital.toString());
+    //     // console.log(data[0].maps.googleMaps);
+    //     // console.log(Object.keys(data[0].currencies)[0]);
+    //     // console.log(data[0].currencies[Object.keys(data[0].currencies)[0]].name);
+    //     // console.log(Object.values(data[0].languages).toString().split(",").join(", "));
+    //     // console.log(data[0].flags.svg);
+    // })
+    
+    let appi1 = `https://restcountries.com/v3.1/all`
+
+    fetch(appi1).then((response) => response.json())
+    .then((data) => {
+        // console.log(data);
+        data.forEach(element => {
+            // console.log(element.name.common)
+            let option = document.createElement("option")
+            option.innerText = element.name.common
+            option.setAttribute("value", element.name.common)
+            option.setAttribute("class", "country-opt")
+
+            document.getElementById("country").appendChild(option)
+        });
+
+        let country = document.getElementById("country")
+
+        country.addEventListener("change", async (e) => {
+            let countryValue = country.value
+            fetch(`https://restcountries.com/v3.1/name/${countryValue}?fullText=true`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                console.log(data[0].name.common);
+                console.log(data[0].capital.toString());
+                console.log(data[0].region.toString());
+                console.log(Object.keys(data[0].currencies)[0]);
+                console.log(data[0].currencies[Object.keys(data[0].currencies)[0]].name);
+                console.log(Object.values(data[0].languages).toString().split(",").join(", "));
+                console.log(data[0].flags.svg);
+                console.log(data[0].maps.googleMaps);
+            })
+
+            // let response = await fetch(`https://restcountries.com/v3.1/name/${countryValue}?fullText=true`)
+            // let data = await response.json()
+            // console.log(data);
+        })
+
+        
+    })
+
+    // fetch("https://real-time-currency-rates.p.rapidapi.com/getcurrencyrate?symbol=EUR", {
+    //     method: 'GET',
+    //     headers: {
+    // 	    'X-RapidAPI-Key': '99e9aac20amsh8ba678cd8cdf578p12e80ajsn1ea8a0f7610e',
+    // 	    'X-RapidAPI-Host': 'real-time-currency-rates.p.rapidapi.com'
+    //     }
+    // })
+    // .then((response) => response.json())
+    // .then((data) => {
+    //     console.log(data);
+    //     // console.log(data[0].name.common);
+    // })
+</script>
+</html>

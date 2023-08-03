@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronus Javascript</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //sync -> sync means the tasks are execute one by one. When one task is completed the other task is execute.
+    //Ex:- task1 = 4s
+    //     task2 = 3s
+    //     task3 = 6s
+    //     task4 = 1s
+    //     Tatoal time is ==> 14s
+
+    //Async -> Async means all the tasks are execute at same time. 
+    //Ex:- task1 = 4s
+    //     task2 = 3s
+    //     task3 = 6s
+    //     task4 = 1s
+    //     Tatoal time is ==> 6s
+
+    // console.log("task1");
+    // setTimeout(()=>{
+    //     console.log("task2");
+    // }, 2000)
+    // setTimeout(()=>{
+    //     console.log("task3");
+    // }, 1500)
+
+    //To write async code => 
+    // fetch
+    // axios
+    // XMLHttpRequest
+    // setTimeout
+    // setInterval
+    // Promise
+
+
+    //Promise
+
+    // let ans = new Promise((res, rej) => {
+    //     let num = Math.floor(Math.random()*10)
+    //     // console.log(num);
+    //     if(num > 5){
+    //         return res(num)
+    //     }else{
+    //         return rej(num)
+    //     }
+
+    // })
+
+    // ans.then((n)=> {
+    //     console.log(n);
+    //     console.log("Ok");
+    // }).catch((e)=>{
+    //     console.log(e);
+    //     console.log("Not ok");
+    // })
+   
+</script>
+</html>

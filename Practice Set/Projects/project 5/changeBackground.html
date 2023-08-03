@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Start to change the color</h2>
+        <div class="btn-cont">
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="stop">Stop</button>
+        </div>
+
+        <div id="color-background">#ffffff</div>
+    </div>
+</body>
+
+<script>
+
+    let start = document.querySelector("#start")
+    let stop = document.querySelector("#stop")
+
+    const changeColor = () => {
+        let values = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e"]
+        let color = "#"
+
+        for(let i = 0; i < 6; i++){
+            let num = Math.floor(Math.random()*15)
+            color += values[num]
+        }
+        document.getElementById("color-background").innerText = color
+        document.getElementById("color-background").style.backgroundColor = color
+    }
+
+    let interval
+    start.addEventListener("click", ()=>{
+        if(!interval){
+            interval = setInterval(changeColor, 2000);
+        }
+    })
+
+    stop.addEventListener("click", ()=>{
+        clearInterval(interval)
+        interval = null
+    })
+    console.log();
+</script>
+</html>

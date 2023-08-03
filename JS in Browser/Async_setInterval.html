@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+</head>
+<body>
+    <h2>This javascript setInterval</h2>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+    //setInterval
+
+    //This method will execute the given function repeatedly after invel of time
+
+    // const sayHi = (name) => {
+    //     console.log(`Hyy ${name} `+ Date.now());
+    // }
+    // setInterval(sayHi, 1000, "julu")
+
+
+    //Ex:- start and stop setinterval method using start and stop button
+    let start = document.querySelector("#start")
+    let stop = document.querySelector("#stop")
+    
+    let interval
+    start.addEventListener("click", ()=>{
+        interval = setInterval(() => {
+            console.log(`Hyy sourav `+ Date.now());
+        }, 1000);
+    })
+    
+    stop.addEventListener("click", ()=>{
+        clearInterval(interval)
+    })
+    
+</script>
+</html>
