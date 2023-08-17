@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in javascript</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+    // Method 1:- 
+    // Create a promises
+
+    // const promiseOne = new Promise(function(resolve, reject){
+    //     setTimeout(() => {
+    //         console.log("Async task is completed");
+    //         resolve()
+    //     }, 2000);
+    // })
+
+    // //consumed a promise
+    // promiseOne.then(function(){
+    //     console.log("Primise Consumed");
+    // })
+
+    // method 2:-
+
+    //Create and cosume the promise
+    // new Promise(function(resolve, reject){
+    //     setTimeout(function(){
+    //         console.log("Async task 2 is completed");
+    //         resolve("primise called successfully")
+    //     }, 3000)
+    // }).then(function(data){
+    //     console.log(data);
+    // })
+
+    //Method 3:- 
+    //Send data through promises
+
+    // const promiseThree = new Promise(function(resolve, reject){
+    //     setTimeout(function(){
+    //         resolve({
+    //             username: "Sourav78",
+    //             email: "sourav@gmail.com",
+    //             phone: "75864258"
+    //         })
+    //     }, 4000)
+    // })
+
+    // promiseThree.then(function(data){
+    //     console.log(data);
+    //     console.log(data.email);
+    // })
+
+    //Method 4:-
+    //use of reject state and catch and finally
+
+    // const promiseFour = new Promise(function(resolve, reject){
+    //     setTimeout(function(){
+    //         let error = false
+    //         if(!error){
+    //             resolve({
+    //                 username: "sourav78",
+    //                 password: "123@m",
+    //                 isLogedin: true
+    //             })
+    //         }else{
+    //             reject("ERROR: Something Went Wrong")
+    //         }
+    //     }, 4000)
+    // })
+
+    // promiseFour.then((user) => {
+    //     console.log(user);
+    //     return user.username
+    // })
+    // .then((username) => {
+    //     console.log(username);
+    // })
+    // .catch((error) => console.log(error))
+    // .finally(()=> console.log("The promise is comsumed"))
+
+    //Method 5:-
+
+    //User of Async await
+    
+    // const promiseFive = new Promise(function(resolve, reject){
+    //     setTimeout(function(){
+    //         let error = true
+    //         if(error){
+    //             resolve({
+    //                 username: "sourav78@gm",
+    //                 password: "123"
+    //             })
+    //         }else{
+    //             reject("ERROR: Something Went Wrong")
+    //         }
+    //     }, 4000)
+    // })
+
+    // async function consumePromiseFive(){
+    //     try {
+    //         let respons = await promiseFive
+    //         console.log(respons);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+    // consumePromiseFive()
+
+    async function getUsersData(){
+        try {
+            let respons = await fetch("https://jsonplaceholder.typicode.com/users")
+            let allUsers = await respons.json()
+            console.log(allUsers);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    getUsersData()
+</script>
+</html>

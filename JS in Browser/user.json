@@ -1,0 +1,36 @@
+{
+    "user":[
+        {
+            "name": "sourav ranjan sahoo",
+            "age": 18,
+            "address": {
+                "dist": "angul",
+                "city": "talcher",
+                "village": "Solada",
+                "pin": 759103
+            }
+        },
+        {
+            "ID": "11756",
+            "name": "soumya ranjan sahoo",
+            "age": 26,
+            "address": {
+                "dist": "angul",
+                "city": "talcher",
+                "village": "Solada",
+                "pin": 759103
+            }
+        },
+        {
+            "ID": "44234",
+            "name": "Situn kumar sahoo",
+            "age": 17,
+            "address": {
+                "dist": "angul",
+                "city": "NTPC",
+                "village": "XXXX",
+                "pin": 454575
+            }
+        }
+    ]
+}

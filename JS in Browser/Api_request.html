@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api request in javascript</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #cards{
+            width: 300px;
+            height: 380px;
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        #card-img{
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin: 10px 85px;
+            border: 1px solid gray;
+        }
+
+        #info{
+            margin-top: 20px;
+            padding-inline: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // Using XMLHttpRequest
+
+    // const requestUrl = "https://api.github.com/users/sourav78"
+    // let data
+    // const xhr = new XMLHttpRequest()
+    // xhr.open("GET", requestUrl)
+    // xhr.onreadystatechange = function(){  
+    //     console.log(xhr.readyState);    
+    //     if(xhr.readyState === 4){
+    //         data = JSON.parse(this.responseText)
+    //         // data = JSON.parse(data)
+    //         console.log(data);
+    //         console.log(data.bio);
+    //     }
+    // }
+    // xhr.send()
+
+
+    // const userURL = "https://randomuser.me/api/"
+
+    // const userRequest = new XMLHttpRequest()
+    // userRequest.open("GET", userURL)
+    // userRequest.onreadystatechange = function(){
+    //     if(userRequest.readyState === 4){
+    //         const data = JSON.parse(this.responseText)
+    //         console.log(data);
+    //         console.log(data.results[0]);
+    //         console.log(Object.values(data.results[0].name).toString().split(",").join(" "));
+    //     }
+    // }
+    // userRequest.send()
+
+    let userName = "rupali-codes"
+    const requestUrl = `https://api.github.com/users/${userName}`
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", requestUrl)
+    xhr.onreadystatechange = function(){  
+        console.log(xhr.readyState);    
+        if(xhr.readyState === 4){
+            let data = JSON.parse(this.responseText)
+            console.log(data);
+            const card = document.createElement("div")
+            card.setAttribute("id", "cards")
+
+            const title = document.createElement("h3")
+            title.innerText = "Github Card"
+            title.style.margin = "2px"
+            title.style.textAlign = "center"
+            card.appendChild(title)
+
+            const image = document.createElement("img")
+            image.src = data.avatar_url
+            image.setAttribute("id", "card-img")
+            card.appendChild(image)
+
+            const info = document.createElement("div")
+            info.setAttribute("id", "info")
+            card.appendChild(info)
+
+            const userid = document.createElement("p")
+            userid.innerHTML = `User id : ${data.login}`
+            info.appendChild(userid)
+
+            const fullname = document.createElement("p")
+            fullname.innerHTML = `Full name: ${data.name}`
+            info.appendChild(fullname)
+
+            const twitter = document.createElement("p")
+            twitter.innerHTML = `Twitter: ${data.twitter_username}`
+            info.appendChild(twitter)
+
+            const followers = document.createElement("p")
+            followers.innerHTML = `Followers: ${data.followers}`
+            info.appendChild(followers)
+
+            const repo = document.createElement("p")
+            repo.innerHTML = `Repositries: ${data.public_repos}`
+            info.appendChild(repo)
+
+
+            document.body.appendChild(card)
+        }
+    }
+    xhr.send()
+</script>
+</html>

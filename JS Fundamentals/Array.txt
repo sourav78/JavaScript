@@ -1,0 +1,38 @@
+Why we use array?
+
+-> Group Related Data
+-> Store large amount of Data
+-> Improve performance
+-> Easy to use
+-> Better readability
+
+=> Declaration of array
+    1. Using square bracket -> let arr = [1, 23, 34, true]
+    2. Using array constructor -> let arr = new Array(1, 2, "apple", true)
+    3. Using array literal -> let arr = Array(897, "sourav", {age: 19}, false)
+
+
+=> Methods of Array;
+---------------------
+    1. push()
+    2. pop()
+    3. shift()
+    4. unshift()
+    5. slice() -> arr.slice(start, end)
+    6. splice() -> arr.splice(startIndex, deleteCount, arg1, arg2, .....)
+    7. concat()
+    8. forEach()
+    9. indexOf(item)
+    10. includes(item)
+    11. find()
+    12. findIndex()
+    13. reverse()
+    14. split()
+    15. join()
+    16. 
+    17
+    18
+    19
+    20
+
+=> copied an array -> let newArr = arr.slice()

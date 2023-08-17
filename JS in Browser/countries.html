@@ -12,6 +12,18 @@
             /* -webkit-appearance: none; */
             -moz-appearance: none;
         }
+
+        #country::-webkit-scrollbar{
+            width: 7px;
+        }
+        #country::-webkit-scrollbar-track{
+            background-color: rgb(203, 0, 0);
+            border-radius: 25px;
+        }
+        #country::-webkit-scrollbar-thumb{
+            background-color: #ccc;
+            border-radius: 25px;
+        }
         #country::-ms-expand{
             display: none;
         }
@@ -27,6 +39,9 @@
 <body>
     <select name="" id="country">
         <option class="country-opt" value="">Option</option>
+    </select>
+
+    <select name="" id="">
     </select>
 </body>
 
