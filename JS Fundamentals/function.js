@@ -50,12 +50,38 @@
 
 //using rest operator
 
-function addAllNums(...args){
-    let sum  = args.reduce((acc, curr) => {
-        return acc + curr
-    }, 0)
+// function addAllNums(...args){
+//     let sum  = args.reduce((acc, curr) => {
+//         return acc + curr
+//     }, 0)
 
-    console.log(sum);
-}
+//     console.log(sum);
+// }
 
-addAllNums(23, 43, 11, 87, 3)
+// addAllNums(23, 43, 11, 87, 3)
+
+
+//Ananymous Function
+
+// let x = function(){
+//     return "Ananymous function"
+// }
+
+// console.log(x())
+
+// // Ex - 2
+
+// let zAdd = function(...nums){
+//     return nums.reduce((acc, curr) => {
+//         return acc + curr
+//     }, 0)
+// }
+
+// console.log(zAdd(12, 32, 11));
+
+
+//IIFE
+
+// (function sayHy(name){
+//     console.log(`Hello ${name}!!!`);
+// })("sourav")

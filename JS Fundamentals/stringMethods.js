@@ -25,6 +25,8 @@ console.log(s.replace("javascript", "python"))
 console.log(s.concat(t))
 
 //trim - Removes whitespace from the beginning and end of a string
+//trimEnd
+//trimStart
 console.log("trim")
 console.log(t.length)
 console.log(t.trim().length)

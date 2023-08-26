@@ -1,6 +1,6 @@
 // filter function in js
 
-const numbers = [12, 43, 22, 11, 09, 03, 66, 14]
+const numbers = [12, 43, 22, 11, 9, 3, 66, 14]
 
 //Explicit
 const greater = numbers.filter( (num) => {
@@ -37,3 +37,12 @@ const userBook = books.filter( (book) => {
     return book.publish >= 1995 && book.genre === 'Science'
 })
 console.log(userBook);
+
+
+const heros = ["Swpnaraj", "Adhira", "Nagraj", "Sidhant", "Agniraj"]
+
+let filHeros = heros.filter((ele) => {
+    return ele.endsWith("raj")
+})
+
+console.log(filHeros);

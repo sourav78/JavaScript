@@ -126,13 +126,13 @@ const jsUser = {
 
 //Object de-structuring
 
-const vechile = {
+let vechile = {
     company: "TATA",
     Type: "Truck",
     ownerName: "Sourav ranjan sahoo",
     price: "30L"
 }
-// console.log(vechile.ownerName)
+console.log(vechile.ownerName)
 
 const {company} = vechile  // de-structure an object
 console.log(company)
@@ -143,3 +143,12 @@ console.log(vName);
 const {ownerName:owner, price:pri} = vechile;  // de-structure a multiple elements of an object and give them a custom name at once
 console.log(owner);
 console.log(pri);
+
+
+
+//Copy by value
+
+// let gadi = Object.assign({}, vechile)
+// vechile.company = "AL"
+// console.log(gadi);
+// console.log(vechile);

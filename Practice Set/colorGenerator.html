@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        body{
+            height: 100vh;
+            display: grid;
+            place-content: center;
+            gap: 20px;
+        }
+
+        #color-btn{
+            width: 200px;
+            padding-block: 10px;
+            font-size: 20px;
+        }
+
+        #color-code{
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="color-btn">Change Color</button>
+    <span id="color-code">#ffffff</span>
+
+    <script>
+        let colorButton = document.querySelector("#color-btn")
+        let colorCode = document.querySelector("#color-code")
+
+        const hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+
+        colorButton.addEventListener("click", () => {
+            let hexCode = changeColor()
+
+            document.body.style.backgroundColor = hexCode
+            colorCode.innerText = hexCode
+        })
+
+        let changeColor = () => {
+            let hexColor = "#"
+
+            for(let i = 1; i <= 6; i++){
+                hexColor += hex[randomNum()]
+            }
+
+            return hexColor
+        }
+
+        function randomNum(){
+            return Math.floor(Math.random()*15)
+        }
+    </script>
+</body>
+</html>
