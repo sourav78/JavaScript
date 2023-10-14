@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .btn{
+            display: inline-block;
+            width: 100px;
+            width: 100px;
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>color</h1>
+    <div class="div">
+        <span class="btn" id="yellow">yellow</span>
+        <span class="btn" id="blue">blue</span>
+        <span class="btn" id="red">red</span>
+    </div>
+
+    <script>
+        // document.getElementById("yellow").addEventListener("click", function (e){
+        //     document.body.style.backgroundColor = "yellow"
+        // })
+
+        const btns = document.querySelectorAll(".btn")
+        const body = document.querySelector("body")
+
+        btns.forEach(function (e){
+            e.addEventListener("click", () => {
+                if(e.innerText === "yellow"){
+                    document.body.style.backgroundColor = "yellow"
+                }else if(e.innerText === "blue"){
+                    document.body.style.backgroundColor = "blue"
+                }else if(e.innerText === "red"){
+                    document.body.style.backgroundColor = "red"
+                }
+            })
+        })
+    </script>
+</body>
+</html>
