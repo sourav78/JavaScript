@@ -1,0 +1,14 @@
+NoSQL -> Not Only SQL
+
+NoSQL based on distrubutes system concept
+
+> Natively Scalable
+> Dynamic Shcema
+
+NoSQL Categories:
+    -> Key value DB
+    -> Documane Based DB
+    -> Columner DB
+    -> Graph Based DB
+
+Distributed system:
