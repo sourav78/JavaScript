@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function gotLocation(position){
+
+            fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/20.2960587%2C%2085.8245398?unitGroup=metric&include=current&key=58RFYTMSNQM5WXER9BCLRAENU&contentType=json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+
+        }
+
+        function failedToGet(){
+            console.log("Failed to get location");
+        }
+
+        navigator.geolocation.getCurrentPosition(gotLocation, failedToGet)
+    </script>
+</body>
+</html>

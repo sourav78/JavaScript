@@ -12,3 +12,9 @@ NoSQL Categories:
     -> Graph Based DB
 
 Distributed system:
+    -> Makes use of multiple systems
+    -> Each machine will be connected to each other over a network
+    -> All the complexity should be  extracted from the end user
+
+    Solution Of Data Failure:
+        -> Replication > Store the data in multiple computers or machines

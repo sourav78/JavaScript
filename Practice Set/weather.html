@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+
+  <h1 id="hh"></h1>
+    <script>
+        fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Angul/2023-10-26/2023-11-06?unitGroup=metric&key=58RFYTMSNQM5WXER9BCLRAENU&contentType=json")
+        .then((response) => response.text())
+        .then((data) => console.log(data))
+    </script>
+</body>
+
+</html>

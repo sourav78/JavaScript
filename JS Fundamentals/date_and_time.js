@@ -24,8 +24,8 @@ const dateFormat1 = new Date(2013, 11, 24)
 console.log(dateFormat1.toDateString());
 
 //year-month-date hour-minute-sec-mili
-const dateFormat2 = new Date(2023, 06, 04, 04, 15, 06) // 7/4/2023, 4:15:06 AM
-console.log(dateFormat2.toLocaleString()); //it return date with time
+// const dateFormat2 = new Date(2023, 06, 04, 04, 15, 06) // 7/4/2023, 4:15:06 AM
+// console.log(dateFormat2.toLocaleString()); //it return date with time
 
 const dateFormat3 = new Date("06-12-2012") //format --> month-date-year
 console.log(dateFormat3.toDateString()); //Tue Jun 12 2012
