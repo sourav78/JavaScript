@@ -18,3 +18,9 @@ Distributed system:
 
     Solution Of Data Failure:
         -> Replication > Store the data in multiple computers or machines
+
+Types of NoSQL Databases: 
+    -> Key - value database : Redis
+    -> Graph Database : Neo4j
+    -> Document Based Database : MongoDB
+    -> There are more as well
