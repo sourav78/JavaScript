@@ -1,0 +1,9 @@
+MongoDB =>
+
+-> MongoDB is a document based Database
+-> Which internally stores data in BSON, but we as normal developer can send and recieve data in the form of JSON.
+
+EX:-{
+        name: Mobile,
+        price: 45000,
+    }

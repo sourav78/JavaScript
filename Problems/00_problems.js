@@ -155,3 +155,5 @@
 //42.Write a function To find Armstrong Number between two given number.
 
 //43. Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
+
+//44. Write a function in java script to calculate the age of a person
