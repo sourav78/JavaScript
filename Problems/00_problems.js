@@ -157,3 +157,6 @@
 //43. Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
 
 //44. Write a function in java script to calculate the age of a person
+
+//45. According to the lodash documentation, _.compact creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
+//    compact([0, 1, false, 2, "", 3]);   // => [1, 2, 3]
