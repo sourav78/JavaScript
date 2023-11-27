@@ -160,3 +160,11 @@
 
 //45. According to the lodash documentation, _.compact creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
 //    compact([0, 1, false, 2, "", 3]);   // => [1, 2, 3]
+
+//46. Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".
+// oddishOrEvenish(373) ➞ "Oddish"
+// 3 + 7 + 3 = 13
+// 13 % 2 = 1
+// oddishOrEvenish(4433) ➞ "Evenish"
+// 4 + 4 + 3 + 3 = 14
+// 14 % 2 = 0
