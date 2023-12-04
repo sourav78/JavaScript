@@ -21,3 +21,15 @@ EX:-{
 Q. Is mongoDB case sensitive?
     ->Yes mongoDB queries are case sensitive.
     -> If i write 'SHOW DBS' or 'Show Db' command it will through error.
+
+=> When we use to store data in RDBMS say SQL data was stored in Table format.
+
+=> Now in MOngoDB, we store data in form of documents (JSON like). So here, a real life entity is represent by collections.
+
+=> What is collections?
+    -> What table for RDBMS is collections for mongoDB. In simple terms, collections are group of JSON documents.
+
+=> What is documents?
+    -> What rows for RDBMS is documents for mongoDB. A document is nothing but JSON (internally BSON). A JSON has multiple key-value pair.
+
+    -> The key of JSON represent the property of entity. So what column for RDBMS is key for mongoDB. 
