@@ -2,8 +2,22 @@ MongoDB =>
 
 -> MongoDB is a document based Database
 -> Which internally stores data in BSON, but we as normal developer can send and recieve data in the form of JSON.
+-> MongoDB convert data from JSON -> BSON and BSON -> JSON automatically.
 
 EX:-{
         name: Mobile,
         price: 45000,
     }
+
+=> Open mondoDB terminal
+    ->write 'mongosh' command in your terminal, & it will open mondodb console.
+
+=>Show all databases in mondoDB
+    -> write 'show dbs' or 'show databases'
+
+=>Select a Database
+    -> use db_name
+
+Q. Is mongoDB case sensitive?
+    ->Yes mongoDB queries are case sensitive.
+    -> If i write 'SHOW DBS' or 'Show Db' command it will through error.
