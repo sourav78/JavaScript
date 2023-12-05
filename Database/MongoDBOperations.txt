@@ -18,3 +18,36 @@
 => Add multiple record in a collection
     -> db.collection_name.insertMany({prop1: "value1", prop2: "value2", ...}, {prop1: "value1", prop2: "value2", ...}, {prop1: "value1", prop2: "value2", ...}, ...)
 
+=> Count of the documents in a collection
+    -> db.collection_name.find().count()
+
+=> Get certain amount of data
+    -> we can use 'limit' function
+    -> db.collection_name.find().limit(number)
+
+=> Set an offeset while quering data
+    -> we can set an offset useing 'skip()' function
+    -> db.collection_name.find().skip(number)
+    -> db.collection_name.find().skip(number).limit(number)
+
+=> Filetr records based on a condition
+    -> To filter records, we can pass an object as an arguments in the 'find()' funtion, where we can add our conditions
+    -> db.collection_name.find({condition_key: 'condition_value'})
+    -> db.collection_name.find({'condition_key.nested_key': 'condition_value'})
+    ->
+
+=> Get specific key-value pair from collection
+    ->If we not want all the property of collection, instead get some specific property(key-value), this process is called projection.
+    -> db.collection_name.find({filteration_criteria}, {key1: true, key2: true, ...})
+    -> You can also pass the first argument as empty object
+    -> db.collection_name.find({}, {key1: true, key2: true, ...})
+
+=> Exclude specific key-value pair from collection
+    -> db.collection_name.find({}, {key1: false, key2: false, ...})
+
+=> Delete documents form collections
+    -> To delete documents we can use functions like 'deleteOne()', 'deleteMany()' and 'findByIdAndDelete()'
+    -> db.collection_name.deleteOne({key: value})
+    -> db.collection_name.deleteMany({key: value})
+    -> 
+
