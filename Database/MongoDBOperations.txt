@@ -1,0 +1,20 @@
+=> To show all collections stored in a database
+    -> show collections
+
+=>Print all the documents of a collection
+    -> db.collection_name.find()
+
+=>Create a new Database
+    -> use db_name
+    -> use command create a new database if there is no database exist with the same name
+
+=> Add a new collections
+    -> db.createCollection("collection_name")
+    -> Make sure we execute this command after 'use db' command.
+
+=> Add a new record in collection
+    -> db.collection_name.insertOne({prop1: "value1", prop2: "value2", ...})
+
+=> Add multiple record in a collection
+    -> db.collection_name.insertMany({prop1: "value1", prop2: "value2", ...}, {prop1: "value1", prop2: "value2", ...}, {prop1: "value1", prop2: "value2", ...}, ...)
+
