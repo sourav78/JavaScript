@@ -180,3 +180,15 @@
 // getFirstValue([80, 5, 100]) ➞ 80
 
 // getFirstValue([-500, 0, 50]) ➞ -500
+
+//49. Create a function that takes an array of strings and returns an array with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.
+// numInStr(["1a", "a", "2b", "b"]) ➞ ["1a", "2b"]
+// numInStr(["abc", "abc10"]) ➞ ["abc10"]
+// numInStr(["this is a test", "test1"]) ➞ ["test1"]
+
+// 50. Create a function that takes an array that represent a Binary Tree and a value and return true if the value is in the tree and, false otherwise.
+// const arr1 = [3, [ 8, [ 5, null, null], null], [ 7, null, null]]
+
+// valueInTree(arr1, 5) ➞ true
+// valueInTree(arr1, 9) ➞ false
+// valueInTree(arr2, 51) ➞ false
