@@ -49,5 +49,9 @@
     -> To delete documents we can use functions like 'deleteOne()', 'deleteMany()' and 'findByIdAndDelete()'
     -> db.collection_name.deleteOne({key: value})
     -> db.collection_name.deleteMany({key: value})
-    -> 
+    -> db.collection_name.findOneAndDelete({key: value}) -> It will return the deleted object
+
+=> Update a documents in a colllection
+    -> To Update documents in a collection we can use updateOne(), updateMany() like functions.
+    -> db.collection_name.updateOne({filterration}, {$set: {key1: value1}})
 
