@@ -1,0 +1,25 @@
+
+=> MongoDB provides different type of operators like comparision, local, bitwise operator.
+
+=> To use opeartor for comparision and logical operation, instead of directly assgning key-value to the filter, put your key and assing a object, inside assign object put the key as a operator and value as value to put.
+
+=> Commonly Used opeartor
+
+    -> $ne: not equals
+    -> $eq: equals
+    -> $lt: less than
+    -> $lte: less than or equals to
+    -> $gt: greater than
+    -> $gte: greater than or equals to
+    -> $and: logical and
+    -> $or: logical or
+    -> $not: logical not
+    -> $nor: logical nor
+    -> $in: for checking in the array
+    -> $nin: not in the array
+
+$lt: db.collection_name.find({key: {$lt: value}})
+$gt: db.collection_name.find({key: {$lt: value}})
+$and: db.collection_name.find({$and: [{key1: {$lt: value1}}, {key1: {$gt: value2}}]})
+$in: db.collection_name.find({key1: {$in: [ele1, ele2, ...]}})
+$nin: db.collection_name.find({key1: {$nin: [ele1, ele2, ...]}})

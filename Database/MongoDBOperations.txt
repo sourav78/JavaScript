@@ -53,5 +53,16 @@
 
 => Update a documents in a colllection
     -> To Update documents in a collection we can use updateOne(), updateMany() like functions.
-    -> db.collection_name.updateOne({filterration}, {$set: {key1: value1}})
+    -> db.collection_name.updateOne({filterration}, {$opeartor: {key1: value1, ...}})
+    -> MongoDB provide us some opearot for updation, for ex, 
+    -> $set: This will allocate the value directly to the key
+    -> $inc: This will increment the value
+    -> To decrease we can increase value with nagative (-ve)
+    -> if you will use 'updateMany()' then all the record that are match to the filteration criterial will update.
 
+=> Get distinct value of a perticular Key
+    -> We can use "distinct()" function in order to get all distinct value.
+
+=> Analysing Query
+    -> We can analysing pur query using 'explain()' function. In this function we can pass an argument 'executionStats' and it will provide information.
+    -> db.collection_name.find().explain('executionStats')
