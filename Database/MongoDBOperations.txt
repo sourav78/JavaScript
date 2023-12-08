@@ -66,3 +66,25 @@
 => Analysing Query
     -> We can analysing pur query using 'explain()' function. In this function we can pass an argument 'executionStats' and it will provide information.
     -> db.collection_name.find().explain('executionStats')
+
+=> Indexing
+    -> Indexing is a mechanism usng which a database ptepare more data stuctures to store data in a perticular order based on perticular key.
+
+    -> Get all indexes present in database 
+        -> db.collection_name.getIndexes()
+
+    -> Remove index from database
+        -> db.collection_name.dropIndex("Index name") 
+
+    -> Create Index in database
+        -> db.collection_name.createIndex({key: 1})
+            -> If value is 1 then it arrange data in assending order.
+
+        -> db.collection_name.createIndex({key: -1})
+            -> If value is -1 then it arrange data in dessending order.
+        
+        -> To create index in string we can use text property
+            -> db.collection_name.createIndex({"key1": "text"})
+
+            -> to find that created index we use
+                -> db.collection_name.find({$text: {key: value}})
