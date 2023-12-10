@@ -10,20 +10,14 @@
     <script>
 
         function gotLocation(position){
-
-            fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/20.2960587%2C%2085.8245398?unitGroup=metric&include=current&key=58RFYTMSNQM5WXER9BCLRAENU&contentType=json")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-            })
-
+            console.log(`${position.coords.latitude}, ${position.coords.longitude}`);
         }
 
         function failedToGet(){
             console.log("Failed to get location");
         }
 
-        navigator.geolocation.getCurrentPosition(gotLocation, failedToGet)
+        navigator.geolocation.getCurrentPosition(gotLocation)
     </script>
 </body>
 </html>
