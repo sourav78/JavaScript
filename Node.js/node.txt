@@ -1,0 +1,33 @@
+Node JS
+    -> Open Source
+    -> JS Runtime environment
+    -> Event Driven 
+
+Node JS -Internallly-> Javascript & C/C++
+
+Use of Node JS
+    -> Realtime Application
+    -> Single page Application(SPA)
+    -> IOT apps
+    -> Data streaming apps
+
+Node JS architecture components:
+    1. Requests
+    2. Node.JS Server
+    3. Event Queue
+    4. Event Loop
+    5. Thread Pool
+    6. External Resources
+
+Working of Node.JS
+    -> Client request recived by Node.JS
+    -> Quering data from database
+    -> Delete, updating data from database
+    -> Add incomming client request to its event Queue
+    -> Node.JS event loop process the request one by one
+
+Advantages of Node.JS
+    -> Its asunchronous model and non-blocking I/O operation improve the scalability and performance
+    -> Node.JS can easily handle multiple client request witout requing multiple Thread.
+    -> Consuming less memory and Resources.
+    ->Node.JS also flexible with multiple frameworks and make developement easier.
