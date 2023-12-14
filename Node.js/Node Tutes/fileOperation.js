@@ -1,9 +1,9 @@
 const fileModule = require("fs")
 
-//create file with synchronously
+//create file with synchronously - Blocking operation
 // fileModule.writeFileSync("./syncFile.txt", "This is synchronous file")
 
-//create file with asynchronously
+//create file with asynchronously - Non-Bloching Operation
 // fileModule.writeFile("./asyncFile.txt", "This is asynchronous file", () => {})
 
 //Read a file

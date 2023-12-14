@@ -1,0 +1,8 @@
+12/14/2023, 6:32:15 PM: / : New request recieved 
+12/14/2023, 6:32:15 PM: /favicon.ico : New request recieved 
+12/14/2023, 6:32:47 PM: /contact : New request recieved 
+12/14/2023, 6:32:47 PM: /favicon.ico : New request recieved 
+12/14/2023, 6:32:58 PM: /about : New request recieved 
+12/14/2023, 6:32:58 PM: /favicon.ico : New request recieved 
+12/14/2023, 6:33:10 PM: /faq : New request recieved 
+12/14/2023, 6:33:10 PM: /favicon.ico : New request recieved 
