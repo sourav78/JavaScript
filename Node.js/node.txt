@@ -31,3 +31,12 @@ Advantages of Node.JS
     -> Node.JS can easily handle multiple client request witout requing multiple Thread.
     -> Consuming less memory and Resources.
     ->Node.JS also flexible with multiple frameworks and make developement easier.
+
+
+NPM => (Node Package Manager)
+    -> package management
+    -> Dependency management
+    -> Version control
+    -> Provide commnad line interface
+    -> Publishing and share packages
+    -> Script & automate
