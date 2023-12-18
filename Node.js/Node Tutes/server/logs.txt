@@ -5,4 +5,11 @@
 12/14/2023, 6:32:58 PM: /about : New request recieved 
 12/14/2023, 6:32:58 PM: /favicon.ico : New request recieved 
 12/14/2023, 6:33:10 PM: /faq : New request recieved 
-12/14/2023, 6:33:10 PM: /favicon.ico : New request recieved 
+12/14/2023, 6:33:10 PM: /favicon.ico : New request recieved 12/18/2023, 7:52:31 PM: / : New request recieved 
+12/18/2023, 7:52:32 PM: /favicon.ico : New request recieved 
+12/18/2023, 7:52:40 PM: /contact : New request recieved 
+12/18/2023, 7:52:40 PM: /favicon.ico : New request recieved 
+12/18/2023, 7:52:56 PM: /aboutr : New request recieved 
+12/18/2023, 7:52:56 PM: /favicon.ico : New request recieved 
+12/18/2023, 7:53:00 PM: /about : New request recieved 
+12/18/2023, 7:53:00 PM: /favicon.ico : New request recieved 

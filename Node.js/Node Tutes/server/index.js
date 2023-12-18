@@ -1,7 +1,6 @@
 const http = require("http")
 
 const fs = require("fs")
-const { url } = require("inspector")
 
 const myServer = http.createServer((req, res) => {
     
@@ -9,16 +8,16 @@ const myServer = http.createServer((req, res) => {
     fs.appendFile("logs.txt", log, () => {
         switch(req.url){
             case "/" :
-                res.end("Heyy!!! from server")
+                res.end("<h1>Heyy!!! from server</h1>")
                 break
             case "/about":
-                res.end("server from about")
+                res.end("<h1>server from about</h1>")
                 break
             case "/contact":
-                res.end("server from contact")
+                res.end("<h1>server from contact</h1>")
                 break
             default: 
-                res.end("404 : Page not found")
+                res.end("<h1>404 : Page not found</h1>")
         }
     })
 })
