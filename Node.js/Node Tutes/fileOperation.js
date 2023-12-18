@@ -7,8 +7,8 @@ const fileModule = require("fs")
 // fileModule.writeFile("./asyncFile.txt", "This is asynchronous file", () => {})
 
 //Read a file
-// let fileContent = fileModule.readFileSync("./asyncFile.txt", "utf-8")
-// console.log(fileContent);
+let fileContent = fileModule.readFileSync("./asyncFile.txt", "utf-8")
+console.log(fileContent);
 
 // fileModule.readFile("./asyncFile.txt", "utf-8", (err, result) => {
 //     if(err){
