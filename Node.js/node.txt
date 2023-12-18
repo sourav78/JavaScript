@@ -40,3 +40,6 @@ NPM => (Node Package Manager)
     -> Provide commnad line interface
     -> Publishing and share packages
     -> Script & automate
+
+    Uninstall Packages
+    -> npm uninstall package --save-dev
