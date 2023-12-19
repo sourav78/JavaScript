@@ -11,9 +11,9 @@ const apiReq = http.request(option, (res) => {
         console.log(JSON.parse(data.toString()));
     })
 
-    res.on("error", (e) => {
-        console.log(e);
-    })
+})
+apiReq.on("error", (e) => {
+    console.log(e);
 })
 
 apiReq.end()
