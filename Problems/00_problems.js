@@ -255,3 +255,9 @@
 // If n = 1 then the number of squares is 1 + 0 = 1
 // If n = 2 then the number of squares is 2^2 + 1 = 4 + 1 = 5
 // If n = 3 then the number of squares is 3^2 + 5 = 9 + 5 = 14
+
+//56. If a person traveled up a hill for 18mins at 20mph and then traveled back down the same path at 60mph then their average speed traveled was 30mph.
+//    Write a function that returns the average speed traveled given an uphill time, uphill rate and a downhill rate. Uphill time is given in minutes. Return the rate as an integer (mph). No rounding is necessary.
+// aveSpd(18, 20, 60) ➞ 30
+// aveSpd(30, 10, 30) ➞ 15
+// aveSpd(30, 8, 24) ➞ 12
