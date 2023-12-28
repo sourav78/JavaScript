@@ -41,7 +41,20 @@ app.route("/api/users/:id").get((req, res) => {
 }).patch((req, res) => {
     res.json({status: "Pending"})
 }).delete((req, res) => {
-    res.json({status: "Pending"})
+
+    const userID = Number(req.params.id)
+
+    const deletedData = usersData.filter((ele) => ele.id !== userID)
+
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(deletedData), (err, data) => {
+        if(err){
+            console.log(err);
+        }else{
+            res.json({status: "Record Deleted", id: userID})
+        }
+    })
+
+    // res.json({status: "Pending"})
 })
 
 app.post("/api/users", (req, res) => {

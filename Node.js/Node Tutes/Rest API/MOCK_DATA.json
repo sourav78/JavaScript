@@ -830,13 +830,5 @@
         "email": "samimysql@gmail.com",
         "gender": "male",
         "job_title": "main"
-    },
-    {
-        "id": 105,
-        "first_name": "chandan",
-        "last_name": "hans",
-        "email": "chandanpython34@gmail.com",
-        "gender": "male",
-        "job_title": "python developer"
     }
 ]
