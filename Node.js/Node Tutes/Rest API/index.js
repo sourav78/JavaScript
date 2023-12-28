@@ -5,7 +5,7 @@ const app = express()
 const PORT = 8888
 
 // middle ware Plugin
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 
 //Routes
 
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
     let userName = `
     <ul>
-        ${usersData.map((ele) =>`<li>${ele.first_name}</li>`).join("")}
+        ${usersData.map((ele) => `<li>${ele.first_name}</li>`).join("")}
     </ul>
     `
 
@@ -25,7 +25,7 @@ app.get("/users", (req, res) => {
 
 app.get("/api/users", (req, res) => {
 
-    
+
 
     res.json(usersData)
 })
@@ -39,7 +39,33 @@ app.route("/api/users/:id").get((req, res) => {
 
     res.json(users)
 }).patch((req, res) => {
-    res.json({status: "Pending"})
+
+    const userID = Number(req.params.id);
+    const updatedData = req.body; // Assuming the request body contains the updated data
+
+    // Find the user by ID
+    const userToUpdate = usersData.find(user => user.id === userID);
+
+    // If the user is found, update the data
+    if (userToUpdate) {
+        Object.assign(userToUpdate, updatedData);
+
+        Object.assign(usersData, userToUpdate)
+
+        // Update the data in the JSON file
+        fs.writeFile("./MOCK_DATA.json", JSON.stringify(usersData), (err) => {
+            if (err) {
+                console.log(err);
+                res.status(500).json({ status: "Error updating user data" });
+            } else {
+                res.json({ status: "User data updated", user: userToUpdate });
+            }
+        });
+    } else {
+        res.status(404).json({ status: "User not found" });
+    }
+
+    // res.json({ status: "Pending" })
 }).delete((req, res) => {
 
     const userID = Number(req.params.id)
@@ -47,10 +73,10 @@ app.route("/api/users/:id").get((req, res) => {
     const deletedData = usersData.filter((ele) => ele.id !== userID)
 
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(deletedData), (err, data) => {
-        if(err){
+        if (err) {
             console.log(err);
-        }else{
-            res.json({status: "Record Deleted", id: userID})
+        } else {
+            res.json({ status: "Record Deleted", id: userID })
         }
     })
 
@@ -63,10 +89,10 @@ app.post("/api/users", (req, res) => {
 
     usersData.push({ id: usersData.length + 1, ...body })
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(usersData), (err, data) => {
-        if(err){
+        if (err) {
             console.log(err);
-        }else{
-            res.json({status: "OK", id: usersData.length})
+        } else {
+            res.json({ status: "OK", id: usersData.length })
         }
     })
 
