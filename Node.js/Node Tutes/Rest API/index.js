@@ -1,7 +1,11 @@
 const express = require("express")
+const fs = require("fs")
 const usersData = require("./MOCK_DATA.json")
 const app = express()
 const PORT = 8888
+
+// middle ware Plugin
+app.use(express.urlencoded({extended: false}))
 
 //Routes
 
@@ -20,6 +24,9 @@ app.get("/users", (req, res) => {
 })
 
 app.get("/api/users", (req, res) => {
+
+    
+
     res.json(usersData)
 })
 
@@ -38,7 +45,28 @@ app.route("/api/users/:id").get((req, res) => {
 })
 
 app.post("/api/users", (req, res) => {
-    res.json({status: "Pending"})
+
+    const body = req.body
+
+    usersData.push({ id: usersData.length + 1, ...body })
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(usersData), (err, data) => {
+        if(err){
+            console.log(err);
+        }else{
+            res.json({status: "OK", id: usersData.length})
+        }
+    })
+
+    console.log(body);
+    console.log(body.email);
+
+})
+
+app.get("/contact", (req, res) => {
+
+    const { user, id } = req.query
+
+    res.send(`<h1>userID: ${id} and user name is: ${user}</h1>`)
 })
 
 // app.patch("/api/users/:id", (req, res) => {
