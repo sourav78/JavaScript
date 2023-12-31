@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }))
 //Routes
 
 app.get("/", (req, res) => {
-    res.send("<h1>This is home page</h1>")
+    res.send("<h1>This is home page with nodemon</h1>")
 })
 
 app.get("/users", (req, res) => {
@@ -33,7 +33,8 @@ app.route("/api/users/:id").get((req, res) => {
     const userID = Number(req.params.id)
 
     const users = usersData.find(user => user.id === userID)
-
+    if(!users) return res.status(404).json({status: "Page not found"})
+    
     res.json(users)
 }).patch((req, res) => {
 
@@ -89,7 +90,7 @@ app.post("/api/users", (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.json({ status: "OK", id: usersData.length })
+            res.status(201).json({ status: "OK", id: usersData.length })
         }
     })
 
