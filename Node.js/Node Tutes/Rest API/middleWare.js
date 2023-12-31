@@ -2,10 +2,24 @@ const express = require("express")
 const fs = require("fs")
 const usersData = require("./MOCK_DATA.json")
 const app = express()
-const PORT = 8888
+const PORT = 8000
 
 // middle ware Plugin
 app.use(express.urlencoded({ extended: false }))
+
+//Middle wares
+
+app.use((req, res, next) => {
+    // return res.json({status: "Not OK"}) // If i return response here then it will not execute the  other response
+
+    next()
+})
+
+app.use((req, res, next) => {
+    console.log("This is middle ware 2");
+    // return res.end("Returning from middle ware 2")
+    next()
+})
 
 //Routes
 
