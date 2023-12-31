@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: genderEnum
     }
-})
+}, {timestamps: true})
 
 const userModel = mongoose.model("user", userSchema)
 
@@ -50,10 +50,45 @@ app.get("/", (req, res) => {
     res.send("<h1>This is home page with nodemon</h1>")
 })
 
-app.get("/users", (req, res) => {
+app.get("/users", async (req, res) => {
     
+    const dbUsers = await userModel.find({})
 
-    res.send("Usre julu")
+    const listOfUsers = `
+        <ul>
+            ${dbUsers.map((ele) => `<li>${ele.firstName} ${ele.lastName} - ${ele.email}</li>`).join("")}
+        </ul>
+    `
+    
+    res.send(listOfUsers)
+})
+
+app.get("/api/users", async(req, res) => {
+    const dbUsers = await userModel.find({})
+
+    console.log(dbUsers.length);
+
+    res.json(dbUsers)
+})
+
+app.route("/api/users/:id").get( async (req, res) => {
+
+    const usersData = await userModel.findById(req.params.id)
+
+    // const users = usersData.find(user => user.id === userID)
+    if(!usersData) return res.status(404).json({status: "Page not found"})
+    
+    res.json(usersData)
+}).patch( async (req, res) => {
+    const updateUser = await userModel.findByIdAndUpdate(req.params.id, {jobTitle: "devloper"})
+
+    // console.log(updateUser);
+
+    return res.json({msg: "success"})
+}).delete( async (req, res) => {
+    await userModel.findByIdAndDelete(req.params.id)
+
+    return res.json({msg: "Deleted"})
 })
 
 app.post("/test", (req, res) => {
