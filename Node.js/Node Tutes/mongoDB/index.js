@@ -1,10 +1,17 @@
 const express = require("express")
+const ejs = require('ejs')
+const path = require('path')
 const PORT = 8000
 
 const {router, router2} = require("./routes/user")
 const {connectMongoDB} = require("./connection")
 
 const app = express()
+//setup ejs for server side rendering
+
+app.set("view engine", "ejs")
+app.set("views", path.resolve('./views'))
+
 
 //connecting mongoDB
 

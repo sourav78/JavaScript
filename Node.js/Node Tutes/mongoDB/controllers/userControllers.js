@@ -54,13 +54,13 @@ async function createNewUser(req, res){
 
 async function showAllUsers(req, res){
     const dbUsers = await userModel.find({})
-    const listOfUsers = `
-        <ul>
-            ${dbUsers.map((ele) => `<li>${ele.firstName} ${ele.lastName} - ${ele.email}</li>`).join("")}
-        </ul>
-    `
 
-    res.send(listOfUsers)
+    console.log(dbUsers);
+
+    // for server side rendering
+    return res.render("allUser", {
+        users: dbUsers
+    })
 }
 
 module.exports = {
