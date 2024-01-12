@@ -1,5 +1,6 @@
-import { v2 as cloudinary } from 'cloudinary'
-import fs from 'fs'
+// import { v2 as cloudinary } from 'cloudinary'
+const { v2:cloudinary } = require('cloudinary')
+const fs = require('fs')
 
 cloudinary.config({
     cloud_name: 'sourav78',
@@ -19,7 +20,7 @@ const uploadOnCloudynary = async (localFilePath) => {
         })
 
         console.log("File is uploaded on cloudinary", response.url);
-
+        fs.unlinkSync(localFilePath)
         return response
     } catch (error) {
         
@@ -30,4 +31,6 @@ const uploadOnCloudynary = async (localFilePath) => {
 
 }
 
-export {uploadOnCloudynary}
+module.exports = {
+    uploadOnCloudynary
+}
