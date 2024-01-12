@@ -1,7 +1,6 @@
 {
   "name": "notnode",
   "version": "1.0.0",
-  "description": "",
   "main": "checkNode.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "url": "^0.11.3"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
 }
