@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 app.post("/profile", upload.single("profileImage"), (req, res) => {
 
     console.log(req.body);
-    console.log(req.file);
+    console.log(req.file.filename);
 
     return res.redirect("/")
 })
