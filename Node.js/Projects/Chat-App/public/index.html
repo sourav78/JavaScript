@@ -5,19 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat app</title>
+    <style>
+
+        .cont{
+            width: 50%;
+            margin: auto;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #message{
+            width: 90%;
+            border: 2px solid black;
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+
+        #sendBtn{
+            padding: 5px 10px;
+            background-color: rgb(12, 203, 12);
+            color: white;
+            font-size: 20px;
+        }
+
+        #msg-cont{
+            text-align: start;
+            width: 70%;
+        }
+
+        p{
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+
+        p:nth-child(odd){
+            background-color: aquamarine;
+        }
+        p:nth-child(even){
+            background-color: rgb(93, 204, 255);
+            text-align: right;
+        }
+
+    </style>
 </head>
 
 <body>
-    <h1>Chat App</h1>
+    <div class="cont">
+        <h1>Chat App</h1>
 
-    <input type="text" name="" id="message">
-    <button id="sendBtn">Send</button>
+        <input type="text" name="" id="message">
+        <button id="sendBtn">Send</button>
 
-    <div id="msg-cont"></div>
+        <div id="msg-cont">
+            
+        </div>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        
+
         const socket = io();
         const messageText = document.getElementById('message')
         const sendBtn = document.getElementById('sendBtn')
@@ -33,6 +82,7 @@
             const msg = messageText.value
             console.log(msg);
             socket.emit('user-msg', msg)
+            messageText.value = ''
         })
     </script>
 </body>
