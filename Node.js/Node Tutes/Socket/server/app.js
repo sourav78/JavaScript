@@ -27,9 +27,9 @@ io.on("connection", (socket) => {
     // socket.emit("welcome", `Welcome to the server ${socket.id}`)
     // socket.broadcast.emit("welcome", `${socket.id} joined the server`)
 
-    socket.on("message", (data) => {
-        console.log(data);
-        io.emit("message", data)
+    socket.on("message", ({message, room}) => {
+        console.log(message);
+        io.to(room).emit("message", message)
     })
 
     socket.on("disconnect", () => {
