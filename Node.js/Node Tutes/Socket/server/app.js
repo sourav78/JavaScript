@@ -29,7 +29,12 @@ io.on("connection", (socket) => {
 
     socket.on("message", ({message, room}) => {
         console.log(message);
-        io.to(room).emit("message", message)
+        socket.to(room).emit("message", message)
+    })
+
+    socket.on("join-room", (roomName) => {
+        console.log(roomName);
+        socket.join(roomName)
     })
 
     socket.on("disconnect", () => {
