@@ -5,3 +5,5 @@ const input = [1, -4, 12, 0, -3, 29, -150]
 const sumOfAllPositiveNumber = input.filter((num) => num > 0)
                                     .reduce((sum, curr) => sum + curr, 0)
 console.log(sumOfAllPositiveNumber);
+
+console.log("Some chages");
