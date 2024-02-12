@@ -5,6 +5,7 @@ Why we use array?
 -> Improve performance
 -> Easy to use
 -> Better readability
+-> Better readability
 
 => Declaration of array
     1. Using square bracket -> let arr = [1, 23, 34, true]
