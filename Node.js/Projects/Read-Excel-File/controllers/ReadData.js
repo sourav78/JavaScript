@@ -1,5 +1,4 @@
 import xlsx from 'xlsx'
-import path from 'path'
 
 const readDataFromExcel = (req, res) => {
     
