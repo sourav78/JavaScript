@@ -18,7 +18,9 @@ const typeDefs = `
     }
 
     type Query {
-        getAllMovies: [Movie]
+        getAllMovies: [Movie],
+        getMovie(id: ID!): Movie,
+        getMovieByYear(year: Int!): [Movie]
     }
 `
 
