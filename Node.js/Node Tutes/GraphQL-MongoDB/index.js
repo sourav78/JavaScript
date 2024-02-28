@@ -1,20 +1,27 @@
 const express = require("express")
 const connectDB = require("./database")
 const MovieModel = require("./model/movie.model")
+const { ApolloServer } = require("@apollo/server")
+const { expressMiddleware } = require("@apollo/server/express4")
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const typeDefs = require('./graphQL/graphqlShema')
 
-const app = express()
+async function startServer() {
+    const app = express()
+    connectDB()
 
-connectDB()
+    const server = new ApolloServer({
+        typeDefs,
+        resolvers: ``,
+    })
 
-app.get("/", async (req, res) => {
-    try {
-        const allMovies = await MovieModel.find()
+    app.use(bodyParser.json())
+    app.use(cors())
 
-        res.json(allMovies)
-    } catch (error) {
-        console.error("Error retrieving movies:", error);
-        res.status(500).json({ error: "Internal Server Error" });
-    }
-})
+    await server.start()
+    app.use("/graphql", expressMiddleware(server))
+    app.listen(3001, console.log("server started at 3001"))
+}
 
-app.listen(3001, () => console.log("Server is running on 3001"))
+startServer()
