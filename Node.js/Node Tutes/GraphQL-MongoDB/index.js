@@ -1,11 +1,12 @@
 const express = require("express")
 const connectDB = require("./database")
-const MovieModel = require("./model/movie.model")
+// const MovieModel = require("./model/movie.model")
 const { ApolloServer } = require("@apollo/server")
 const { expressMiddleware } = require("@apollo/server/express4")
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const typeDefs = require('./graphQL/graphqlShema')
+const resolvers = require('./graphQL/resolver')
 
 async function startServer() {
     const app = express()
@@ -13,7 +14,7 @@ async function startServer() {
 
     const server = new ApolloServer({
         typeDefs,
-        resolvers: ``,
+        resolvers,
     })
 
     app.use(bodyParser.json())
@@ -25,3 +26,5 @@ async function startServer() {
 }
 
 startServer()
+
+// mongo-graphQL - setup and retreve data from mongoDB
