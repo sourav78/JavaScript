@@ -14,7 +14,20 @@ const typeDefs = `
         rated: String,
         lastupdated: String,
         year: Int,
-        type: String
+        type: String,
+        awards: Award,
+        imdb: IMDB
+    }
+
+    type Award {
+        wins: Int,
+        nominations: Int,
+        text: String
+    }
+    type IMDB {
+        rating: Float,
+        votes: Int,
+        id: Int
     }
 
     type Query {

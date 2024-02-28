@@ -1,10 +1,10 @@
 const express = require("express")
-const connectDB = require("./database")
-// const MovieModel = require("./model/movie.model")
 const { ApolloServer } = require("@apollo/server")
 const { expressMiddleware } = require("@apollo/server/express4")
 const bodyParser = require('body-parser')
 const cors = require('cors')
+
+const connectDB = require("./database")
 const typeDefs = require('./graphQL/graphqlShema')
 const resolvers = require('./graphQL/resolver')
 

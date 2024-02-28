@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+
 const MovieSchema = new mongoose.Schema({
     plot: String,
     genres: [String],
@@ -14,6 +15,16 @@ const MovieSchema = new mongoose.Schema({
     lastupdated: { type: Date, default: Date.now },
     year: Number,
     type: String,
+    awards: {
+        wins: { type: Number },
+        nominations: { type: Number },
+        text: { type: String }
+    },
+    imdb: {
+        rating: { type: Number },
+        votes: { type: Number },
+        id: { type: Number }
+    }
 })
 
 const MovieModel = mongoose.model("allmovies", MovieSchema)
