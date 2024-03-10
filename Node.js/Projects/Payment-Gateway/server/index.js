@@ -4,8 +4,11 @@ import express from 'express'
 import Razorpay from 'razorpay'
 import paymentRoute from './routes/payment.router.js'
 import cors from 'cors'
+import { connectDB } from './config/database.js'
 
 const app = express()
+
+connectDB()
 
 app.use(cors())
 app.use(express.json())
@@ -17,10 +20,6 @@ export const instance = new Razorpay({
 });
 
 app.use('/api', paymentRoute)
-
-app.get('/', (req, res) => {
-    res.send("hello payment")
-})
 
 app.listen(process.env.PORT, () => {
     console.log(`Server started: http://localhost:${process.env.PORT}`);

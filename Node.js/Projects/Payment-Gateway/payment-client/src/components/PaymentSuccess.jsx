@@ -1,6 +1,6 @@
-import { Box, Heading, VStack, Text } from '@chakra-ui/react'
+import { Box, Heading, VStack, Text, Button } from '@chakra-ui/react'
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 const PaymentSuccess = () => {
 
@@ -12,6 +12,9 @@ const PaymentSuccess = () => {
             <VStack h={'100vh'} justifyContent={'center'}>
                 <Heading textTransform={'uppercase'}>Order Successfull</Heading>
                 <Text>Ref. No. {refNo}</Text>
+                <Link to='/'>
+                    <Button>Continue Shopping</Button>
+                </Link>
             </VStack>
         </Box>
     )
