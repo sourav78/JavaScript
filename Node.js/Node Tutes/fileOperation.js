@@ -19,7 +19,12 @@ console.log(fileContent);
 // })
 
 //Append file content
-// fileModule.appendFileSync("./asyncFile.txt", " And this is the append line")
+
+const soood = {
+    name: "sois"
+}
+
+fileModule.appendFileSync("./asyncFile.txt", JSON.stringify(soood)+'\n\n---------------------------\n\n')
 
 //copy a file
 // fileModule.cpSync("./syncFile.txt", "./copy.txt")
