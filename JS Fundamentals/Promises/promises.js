@@ -68,6 +68,14 @@ const a4 = createAsyncTask("a4", 700)
 //     console.log(data);
 // })
 
-Promise.allSettled([a1, a3, a2, a4]).then((data) => {
+// Promise.allSettled([a1, a3, a2, a4]).then((data) => {
+//     console.log(data);
+// })
+
+// Promise.race([a1, a3, a2, a4]).then((data) => {
+//     console.log(data);
+// })
+
+Promise.any([a1, a3, a2, a4]).then((data) => {
     console.log(data);
-})
+}) 
