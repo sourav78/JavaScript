@@ -1,29 +1,25 @@
 import { Hono } from 'hono'
-import { logger } from 'hono/logger'
-import { CustomError, errorHandler } from './middleware/ErrorHandler.middleware'
+import { errorHandler } from './middleware/ErrorHandler.middleware'
 import { routeNotFoundHandler } from './middleware/RouteNotFound.middleware'
 import {cors} from "hono/cors"
 import { corsOption } from './middleware/CorsHandler.middleware'
+import { loggerHander } from './middleware/Logger.middleware'
+import { starterMessage } from './utils/StarterMessage'
+import globalRouter from './middleware/RouterHandler.middleware'
 
 const app:Hono = new Hono()
 
 // Middleware for logging
-app.use("*", logger((message: string, ...rest: string[]) => {
-  console.log(message, ...rest)
-}))
+app.use("*", loggerHander)
 
 // Define Cors 
 app.use(cors(corsOption))
 
-app.get('/', (c) => {
+// Starter message for health check
+app.get('/', starterMessage)
 
-  try {
-    // throw new CustomError(400, "Cust err")
-    return c.text(`Hello Hono! From sourav ${Bun.env.MY_NAME}`)
-  } catch (e) {
-    throw e
-  }
-})
+// Define router hanlder
+app.route('/', globalRouter)
 
 // Define routing error handler
 app.notFound(routeNotFoundHandler)
