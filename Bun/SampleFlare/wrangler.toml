@@ -1,0 +1,28 @@
+name = "sampleflare"
+main = "src/index.ts"
+compatibility_date = "2024-12-04"
+
+# compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+MY_VAR = "Yoo🫡"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sampleflare-d1"
+database_id = "9319e1ec-43bf-49d7-bb7a-b72472919cdc"
+
+# [ai]
+# binding = "AI"
+
+# [observability]
+# enabled = true
+# head_sampling_rate = 1
