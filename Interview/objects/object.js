@@ -211,3 +211,203 @@ console.log(first);
 // Nested destrcring -> Assigning to a new varible
 const {fullName:{first: adminFirstName}} = admin
 console.log(adminFirstName);
+
+
+
+// q.9 -> What is the output
+
+// Problem
+
+// function getItems(fruitList, ...args, favoriteFruit) { 
+//   return [...fruitList, ...args, favoriteFruit] 
+// }
+
+// Solution
+
+function getItems(fruitList, favoriteFruit, ...args) { 
+  return [...fruitList, ...args, favoriteFruit] 
+}
+
+getItems(["banana", "apple"], "pear", "orange")
+
+/**
+ * Here in the getItems() funtion this is syntax error.
+ * Because ...args which is rest parameter is always pass at the end.
+ * But the speared operator can be passed in the middle -> No problem
+ */
+
+
+
+// q.10 -> What is the output.
+
+let e = { greeting: 'Hey!' };
+let d;
+
+d = e;
+e.greeting = 'Hello';
+console.log("Reference", d.greeting); // Hello
+
+/**
+ * Here the value of d is also changed.
+ * Because "d" is refrencing to the object "c"
+ * Remember we not copying the object. We just refrencing to the object
+ */
+
+// To copy the object 
+
+let g = { greeting: 'Hey!' };
+let h;
+
+h = {...g}
+g.greeting = "Yoooo"
+console.log("Copy", h.greeting);
+
+
+
+// q.11 -> What is the output
+
+console.log({a: 1} == {a: 1}); 
+// console.log({a: 1} === {a: 1});
+
+console.log(e == d); // q.10
+console.log(e === d); // q.10
+
+/**
+ * Both Of the condition return false.
+ * Because All the objects are pointing to the different memory location.
+ * Condition is true when Both objects are referencing to the same memory location
+ */
+
+
+
+// q.12 -> What is the output
+
+let person = { name: 'Lydia' };
+const members = [person];
+person = null;
+
+console.log(members); // [{ name: 'Lydia' }]
+
+let person2 = { name: 'Lydia' };
+const members2 = [person2];
+person2.name = null;
+
+console.log(members2); // [{ name: null }]
+
+
+
+// q.13 -> What is the output
+
+const value2 = { number: 10 };
+
+const multiply = (x = { ...value2 }) => {
+  console.log((x.number *= 2));
+};
+
+multiply(); // 20
+multiply(); // 20
+multiply(value2); // 20
+multiply(value2); // 40
+
+/**
+ * In first 2 function call its value is 20 because we just copy the object
+ * But in the 3 and 4 function its value changes because we passing the refrence of the object
+ */
+
+
+
+// q.14 -> What is the output
+
+function changeAgeAndReference(person) {
+  person.age = 25;
+  person = {
+    name: 'John',
+    age: 50
+  };
+
+  return person;
+}
+
+const personObj1 = {
+  name: 'Alex',
+  age: 30
+};
+
+const personObj2 = changeAgeAndReference(personObj1);
+
+console.log(personObj1); // -> ?
+console.log(personObj2); // -> ?
+
+/**
+ * personObj1 = { name: 'Alex', age: 25 }
+ * personObj2 = { name: 'John', age: 50 }
+ * 
+ * For personObj1 it only change the age but not the whole object
+ * Because When it reassign the person object it not changed the main object
+ */
+
+
+
+//q.15 -> Shallow Copy and Deep Copy
+
+// Shallow Copy
+/**
+ * In Shallow copy we clone the object to another but it still have refrence to its nested object.
+ * In other word, Nested objects are not copied.
+ * So When you changed value of nested object in the main object it also refrect on the copied object.
+ */
+
+// Shallow Copy - 1
+const ObjCopy = {
+  username: "Sourav",
+  age: 20,
+  fullName: {
+    first: "Sourav R.",
+    last: "Sahoo"
+  }
+}
+
+const newCopy = {...ObjCopy}
+
+ObjCopy.fullName.first = "Copy Name"
+
+console.log(newCopy);
+
+
+// Shallow Copy - 2
+
+const ObjCopy2 = {
+  username: "Sourav",
+  age: 20,
+  fullName: {
+    first: "Sourav R.",
+    last: "Sahoo"
+  }
+}
+
+const newCopy2 = Object.assign({}, ObjCopy2)
+
+ObjCopy2.fullName.first = "Copy Name"
+
+console.log(newCopy2);
+
+
+// Deep Copy
+/**
+ * In Deep copy the whole object is cloned or copied with its nested objects.
+ */
+
+const ObjCopy3 = {
+  username: "Sourav",
+  age: 20,
+  fullName: {
+    first: "Sourav R.",
+    last: "Sahoo"
+  }
+}
+
+const newCopy3 = JSON.parse(JSON.stringify(ObjCopy3))
+
+ObjCopy3.fullName.first = "Copy Name"
+
+console.log(newCopy3);
