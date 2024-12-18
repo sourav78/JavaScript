@@ -266,7 +266,7 @@ console.log("Copy", h.greeting);
 
 // q.11 -> What is the output
 
-console.log({a: 1} == {a: 1}); 
+console.log({a: 1} == {a: 1});
 // console.log({a: 1} === {a: 1});
 
 console.log(e == d); // q.10

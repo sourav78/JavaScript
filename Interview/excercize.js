@@ -165,3 +165,14 @@
 (function yoo(){
   console.log("Hello");
 })()
+
+
+function sum(a, b){
+  return a + b;
+}
+
+console.log(sum(2, 4));
+
+// my name is sourav ranjan sahoo
+
+// Thiskey board not lioke i expected.
