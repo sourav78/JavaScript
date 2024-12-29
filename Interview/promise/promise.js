@@ -125,13 +125,13 @@ function shareTheVideo(video) {
 
 //Promise.any()
 
-Promise.any([
-  viewTheVideo("Video 3"),
-  likeTheVideo(""),
-  shareTheVideo("Video 3")
-]).then((result) => {
-  console.log(result);
-}).catch(err => console.log(err))
+// Promise.any([
+//   viewTheVideo("Video 3"),
+//   likeTheVideo(""),
+//   shareTheVideo("Video 3")
+// ]).then((result) => {
+//   console.log(result);
+// }).catch(err => console.log(err))
 
 
 /**
@@ -140,3 +140,93 @@ Promise.any([
  * Promise any() method takes an array of promises as a parameter and returns the first fulfilled promise
  * It returns a rejected value when all of the promises in the array return rejects or if the array is empty.
  */
+
+
+
+
+// Async / await -> By enabling asynchronous code to appear synchronous, they enhance code readability and make it easier to manage complex asynchronous flows.
+
+// const asyncFunction = async () => {
+//   try {
+//     const msg1 = await viewTheVideo("Video 4")
+//     const msg2 = await likeTheVideo("")
+//     const msg3 = await shareTheVideo("Video 4")
+
+//     console.log({
+//       msg1,
+//       msg2,
+//       msg3,
+//     });
+//   } catch (error) {
+//     console.log("Error : ", error);
+//   }
+// }
+
+// asyncFunction()
+
+
+
+
+//Interview Qestion
+
+
+//q.1 -> What is the output
+
+// console.log("start");
+
+// const promise1 = new Promise((resolve, reject) => {
+//   console.log(1);
+//   resolve(2)
+// })
+
+// promise1.then((data) => {
+//   console.log(data);
+// })
+
+// console.log("end");
+
+
+
+//q.1 -> What is the output
+
+// console.log("start");
+
+// const promise2 = new Promise((resolve, reject) => {
+//   console.log(1);
+//   resolve(2)
+//   console.log(3);
+// })
+
+// promise2.then((data) => {
+//   console.log(data);
+// })
+
+// console.log("end");
+
+/**
+ * OP:- start -> 1 -> 3 -> end -> 2
+ * 
+ * Because when the promise is initialized then the promise execute the synchronous code forst 
+ */
+
+
+
+
+//q.3 -> What is the output
+
+console.log("Start");
+
+const fn = () => {
+  return new Promise((resolve, reject) => {
+    console.log(1);
+    resolve("Result")
+  })
+}
+
+console.log("Middle");
+
+fn().then((data) => {
+  console.log(data);
+})
+
+console.log("End");
