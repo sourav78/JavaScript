@@ -214,19 +214,60 @@ function shareTheVideo(video) {
 
 //q.3 -> What is the output
 
-console.log("Start");
+// console.log("Start");
 
-const fn = () => {
-  return new Promise((resolve, reject) => {
-    console.log(1);
-    resolve("Result")
-  })
+// const fn = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log(1);
+//     resolve("Result")
+//   })
+// }
+
+// console.log("Middle");
+
+// fn().then((data) => {
+//   console.log(data);
+// })
+
+// console.log("End");
+
+
+
+
+//Promise Polyfill
+
+function CustomPromise(executor){
+  let onResolve, onReject;
+
+  function resolve(value){
+    onResolve(value)
+  }
+
+  function reject(value){
+    onReject(value)
+  }
+
+  this.then = function(callback){
+    onResolve = callback;
+    return this
+  }
+
+  this.catch = function(calback){
+    onReject = calback;
+    return this;
+  }
+
+  executor(resolve, reject)
+
 }
 
-console.log("Middle");
 
-fn().then((data) => {
-  console.log(data);
+const examplePromise = new CustomPromise((resolve, reject) => {
+  // setTimeout(() => {
+  // }, 2000);
+  resolve(1000)
 })
 
-console.log("End");
+examplePromise.then((data) => {
+  console.log(data);
+}).catch((err) => console.log("Error ", err))
