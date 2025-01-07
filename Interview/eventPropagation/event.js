@@ -79,22 +79,65 @@ const button = document.querySelector("button")
 
 //Stop Event Propagation
 
-div.addEventListener("click", (event) => {
-  event.stopPropagation()
-  alert("Div")
-})
+// div.addEventListener("click", (event) => {
+//   event.stopPropagation()
+//   alert("Div")
+// })
 
-form.addEventListener("click", (event) => {
-  event.stopPropagation()
-  alert("form")
-})
+// form.addEventListener("click", (event) => {
+//   event.stopPropagation()
+//   alert("form")
+// })
 
-button.addEventListener("click", (event) => {
-  event.stopPropagation()
-  alert("Button")
-})
+// button.addEventListener("click", (event) => {
+//   event.stopPropagation()
+//   alert("Button")
+// })
 
 /**
  * To stop the event propagation we use event.stopPropagation()
  * This will stop the event from propagating to the parent elements
  */
+
+
+
+
+// Event Deligation
+
+document.querySelector(".productContainer").addEventListener("click", (event) => {
+
+  if(event.target.tagName === "SPAN"){
+    window.location.href = "/"+event.target.className.split(" ")[1]
+  }
+})
+
+/**
+ * Here a single event is attach to the parrent.
+ * 
+ * Event deligation is technique in javascript where a single event listner attach to the parrent element
+ * instaed of attching the event listner to the multiple child elements.  
+ * 
+ */
+
+
+
+//Creating a modal
+
+const modalBtn = document.querySelector(".modal-button")
+const modalContainer = document.querySelector(".modalContainer")
+
+modalBtn.addEventListener("click", () => toggleModal(true))
+
+modalContainer.addEventListener("click", (event) => {
+
+  console.log(event.target.className);
+
+  if(event.target.className === "modalContainer"){
+    toggleModal(false)
+  }
+  
+})
+
+function toggleModal(value){
+  modalContainer.style.display = value ? "flex" : "none"
+}
