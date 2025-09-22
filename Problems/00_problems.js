@@ -261,3 +261,23 @@
 // aveSpd(18, 20, 60) ➞ 30
 // aveSpd(30, 10, 30) ➞ 15
 // aveSpd(30, 8, 24) ➞ 12
+
+//57. Counting Vowels and Consonants in a String
+// Example:
+// Input: string = "hello world"
+// Output: Vowels: 3, Consonants: 7
+
+//58. Finding the Largest and Smallest Numbers in an Array
+// Example:
+// Input: array = [4, 7, 1, 8, 5]
+// Output: Largest: 8, Smallest: 1
+
+//59. Sorting an Array
+// Example:
+// Input: array = [3, 1, 4, 1, 5, 9]
+// Output: [1, 1, 3, 4, 5, 9]
+
+//60. Checking for Armstrong Numbers in a Range
+// Example:
+// Input: range = [1, 500]
+// Output: [1, 153, 370, 371, 407]
