@@ -281,3 +281,21 @@
 // Example:
 // Input: range = [1, 500]
 // Output: [1, 153, 370, 371, 407]
+
+//61. Finding the Sum of Prime Factors of a Number
+// Example:
+// Input: number = 12
+// Output: 5
+// Explanation: The prime factors of 12 are 2 and 3, and their sum is 2 + 3 = 5.
+
+//62. Finding the Second Largest Number in an Array
+// Example:
+// Input: array = [10, 20, 4, 45, 99]
+// Output: 45
+// Explanation: The second largest number in the array is 45.
+
+//63. Finding the Longest Substring Without Repeating Characters
+// Example:
+// Input: string = "abcabcbb"
+// Output: "abc"
+// Explanation: The longest substring without repeating characters is "abc".
