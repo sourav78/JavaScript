@@ -299,3 +299,9 @@
 // Input: string = "abcabcbb"
 // Output: "abc"
 // Explanation: The longest substring without repeating characters is "abc".
+
+//64. Counting the Number of Palindromic Substrings in a String
+// Example:
+// Input: string = "aaa"
+// Output: 6
+// Explanation: Palindromic substrings are "a", "a", "a", "aa", "aa", "aaa".
