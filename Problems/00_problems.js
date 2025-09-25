@@ -305,3 +305,9 @@
 // Input: string = "aaa"
 // Output: 6
 // Explanation: Palindromic substrings are "a", "a", "a", "aa", "aa", "aaa".
+
+//65. Finding All Pairs of Elements in an Array that Add Up to a Given Sum
+// Example:
+// Input: array = [1, 2, 3, 4, 5], target = 5
+// Output: [(1, 4), (2, 3)]
+// Explanation: Pairs that sum up to 5 are (1, 4) and (2, 3).
